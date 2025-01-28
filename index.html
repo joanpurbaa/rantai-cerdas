@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ketjeh Developer</title>
+  <link rel="icon" href="images/logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<style>
+  @font-face {
+    font-family: "Montreux Jazz Soft Regular";
+    src: url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.eot");
+    src: url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.eot?#iefix")format("embedded-opentype"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.woff2")format("woff2"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.woff")format("woff"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.ttf")format("truetype"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.svg#Montreux Jazz Soft Regular")format("svg");
+  }
+
+  * {
+    letter-spacing: 1px;
+  }
+
+  .text-stroke {
+    -webkit-text-stroke: 1px #fff7ed;
+    text-stroke: 1px #fff7ed;
+  }
+
+  .background {
+    background-image: url('images/background.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+</style>
+
+<body class="bg-black">
+  <header class="fixed w-full flex justify-between items-center text-orange-50 p-10 backdrop-blur-2xl">
+    <h2 class="text-3xl font-semibold">Ketjeh Developer</h2>
+    <nav>
+      <ul class="flex items-center gap-x-14 text-xl">
+        <li>
+          <a href="">Materi</a>
+        </li>
+        <li>
+          <a href="">Target</a>
+        </li>
+        <li>
+          <a href="">FAQ</a>
+        </li>
+        <li>
+          <a class="bg-orange-50 text-black text-lg font-bold flex items-center gap-x-3 rounded-full py-3 px-5">
+            <img class="w-7 h-7" src="images/icons/phone.svg" alt="">
+            Hubungi
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="text-orange-50">
+    <section class="grid grid-cols-12 pt-64">
+      <h1 class="col-start-2 col-span-6 text-7xl text-transparent font-black"><span class="text-stroke italic">SIAP
+          MENJADI</span><br><span class="text-orange-50">WEBSITE DEVELOPER</span><br><span
+          class="text-stroke italic">YANG KECE?</span></h1>
+      <div class="col-start-8 col-span-4 flex flex-col justify-between items-start">
+        <p class="text-xl font-light">Telah membantu lebih dari <span class="font-semibold">1.000 individu</span> meraih
+          impian menjadi <span class="font-semibold">web developer</span> andal, membangun karier gemilang di perusahaan
+          impian mereka.</p>
+        <a class="bg-violet-500 hover:bg-violet-600 inline-flex items-center gap-x-3 text-2xl font-medium py-5 px-9 rounded-full"
+          href="">Daftar <img class="fill-orange-50 w-6 h-6" src="images/icons/arrow-right.svg" alt=""></a>
+      </div>
+    </section>
+    <video class="col-span-12 w-full" autoplay loop muted>
+      <source src="videos/video1.mp4" type="video/mp4">
+    </video>
+    <section class="background h-screen flex flex-col justify-center items-center text-center px-[500px]">
+      <h1 class="text-7xl font-black"><span class="text-stroke text-transparent italic">JADI JAGOAN
+          DALAM</span><br><span class="text-orange-100">6 BULAN</span></h1>
+      <p class="text-2xl mt-12">Ga cuma mimpi, bikin coding jadi hobi! Dalam <span class="font-bold">1 bulan</span>,
+        kamu bakal jadi developer kece yang siap bikin project keren. <br> Are you ready to glow up?</p>
+    </section>
+    <section class="grid grid-cols-12 py-64">
+      <div class="col-start-2 col-span-3 space-y-20">
+        <h1 class="text-7xl font-black italic"><span class="text-stroke text-black">MATERI YANG
+            AKAN</span><br><span>KAMU KUASAI!</span></h1>
+        <a class="bg-violet-500 hover:bg-violet-600 inline-flex items-center gap-x-3 text-2xl font-medium py-5 px-9 rounded-full"
+          href="">Daftar <img class="fill-orange-50 w-6 h-6" src="images/icons/arrow-right.svg" alt=""></a>
+      </div>
+      <div id="cardWrapper" class="col-start-6 col-span-9 grid grid-cols-4 gap-2"></div>
+    </section>
+  </main>
+  <script>
+    const data = [
+      ["Fondasi Web Development", "Mulai perjalananmu jadi web dev dengan HTML, CSS, Tailwind CSS, dan Flowbite buat website kece dan responsif.", "images/card1.svg"],
+      ["Interaktivitas & Animasi", "Bikin websitemu lebih hidup dengan JavaScript, DOM Manipulation, dan GSAP biar interaktif dan smooth.", "images/card2.svg"],
+      ["Frontend & Backend Development", "Bangun aplikasi keren pakai MongoDB, Express.js, Node.js, Prisma untuk API, React.js untuk Frontend dan Typescript.", "images/card3.svg"],
+      ["Deployment & Pengelolaan Proyek", "Biar makin kece, kita bakal belajar Next.js, NextAuth, Git, dan GitHub, terus deploy ke Vercel biar websitemu siap online!", "images/card4.svg"]
+    ];
+
+    const cardWrapper = document.getElementById("cardWrapper");
+
+    data.forEach(item => {
+      const card = document.createElement("div");
+      card.classList.add("col-span-2", "bg-zinc-900", "text-orange-50", "rounded-[50px]", "px-14", "py-8", "flex", "flex-col");
+
+      const title = document.createElement("h3");
+      title.classList.add("text-2xl", "font-semibold", "mt-4");
+      title.textContent = item[0];
+      card.appendChild(title);
+
+      const description = document.createElement("p");
+      description.classList.add("mt-2", "text-lg", "font-normal", "flex-grow");
+      description.textContent = item[1];
+      card.appendChild(description);
+
+      const image = document.createElement("img");
+      image.src = item[2];
+      image.classList.add("mt-20", "w-60", "h-60", "object-contain");
+      card.appendChild(image);
+
+      cardWrapper.appendChild(card);
+    });
+
+
+  </script>
+</body>
+
+</html>
