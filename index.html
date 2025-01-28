@@ -69,8 +69,8 @@
         <p class="text-xl font-light">Telah membantu lebih dari <span class="font-semibold">1.000 individu</span> meraih
           impian menjadi <span class="font-semibold">web developer</span> andal, membangun karier gemilang di perusahaan
           impian mereka.</p>
-        <a class="bg-violet-500 hover:bg-violet-600 inline-flex items-center gap-x-3 text-2xl font-medium py-5 px-9 rounded-full"
-          href="">Daftar <img class="fill-orange-50 w-6 h-6" src="images/icons/arrow-right.svg" alt=""></a>
+        <a class="bg-amber-400 hover:bg-amber-500 inline-flex items-center gap-x-3 text-2xl text-zinc-800 font-bold py-5 px-9 rounded-full"
+          href="">Daftar <img class="w-6 h-6" src="images/icons/arrow-right.svg" alt=""></a>
       </div>
     </section>
     <video class="col-span-12 w-full" autoplay loop muted>
@@ -78,54 +78,66 @@
     </video>
     <section class="background h-screen flex flex-col justify-center items-center text-center px-[500px]">
       <h1 class="text-7xl font-black"><span class="text-stroke text-transparent italic">JADI JAGOAN
-          DALAM</span><br><span class="text-orange-100">6 BULAN</span></h1>
+          DALAM</span><br><span class="text-orange-100">4 BULAN</span></h1>
       <p class="text-2xl mt-12">Ga cuma mimpi, bikin coding jadi hobi! Dalam <span class="font-bold">1 bulan</span>,
         kamu bakal jadi developer kece yang siap bikin project keren. <br> Are you ready to glow up?</p>
     </section>
-    <section class="grid grid-cols-12 py-64">
-      <div class="col-start-2 col-span-3 space-y-20">
-        <h1 class="text-7xl font-black italic"><span class="text-stroke text-black">MATERI YANG
+    <section class="grid grid-cols-12 py-32">
+      <div class="col-start-2 col-span-2 space-y-20">
+        <h1 class="text-7xl font-black italic"><span class="text-stroke text-black">YANG
             AKAN</span><br><span>KAMU KUASAI!</span></h1>
-        <a class="bg-violet-500 hover:bg-violet-600 inline-flex items-center gap-x-3 text-2xl font-medium py-5 px-9 rounded-full"
+        <a class="bg-amber-400 hover:bg-amber-500 inline-flex items-center gap-x-3 text-2xl text-zinc-800 font-bold py-5 px-9 rounded-full"
           href="">Daftar <img class="fill-orange-50 w-6 h-6" src="images/icons/arrow-right.svg" alt=""></a>
       </div>
-      <div id="cardWrapper" class="col-start-6 col-span-9 grid grid-cols-4 gap-2"></div>
+      <div id="cardWrapper" class="col-start-5 col-span-7 grid grid-cols-4 gap-2"></div>
+    </section>
+    <section class="grid grid-cols-12 text-orang-100 py-32">
+      <div class="col-start-2 col-span-12 space-y-20">
+        <h1 class="text-7xl font-black italic"><span class="text-stroke text-black">TARGET</span><br><span>KAMU!</span>
+        </h1>
+      </div>
+      <div class="col-start-2 col-end-12 grid grid-cols-12 gap-20 mt-10">
+        <div class="col-span-7 space-y-7 flex items-end">
+          <div class="space-y-7">
+            <h1 class="text-3xl font-bold">Website profil yang kece & responsif</h1>
+            <video class="w-full h-auto" autoplay loop muted>
+              <source src="videos/video2.mp4" type="video/mp4">
+            </video>
+            <p class="text-lg">Website profil pribadi yang responsif dan profesional menggunakan HTML, CSS, atau
+              Tailwind CSS. Optimalkan dengan SEO untuk meningkatkan visibilitas di mesin pencari.</p>
+          </div>
+        </div>
+        <div class="col-span-5 space-y-7">
+          <h1 class="text-3xl font-bold">Dashboard cuaca Real-time</h1>
+          <img loading="lazy" src="images/real-time-weather-app.jpg" alt="">
+          <p class="text-lg">Fetch API dari OpenWeatherMap dan gunakan GSAP untuk membuat
+            platform Dashboard cuaca dengan animasi yang menarik.
+          </p>
+        </div>
+        <div class="col-span-4 space-y-7">
+          <h1 class="text-3xl font-bold">Platform manajemen tugas</h1>
+          <video class="w-full" autoplay loop muted>
+            <source src="videos/video3.mp4" type="video/mp4">
+          </video>
+          <p class="text-lg">Kelola tugas dengan mudah, dengan Next.js, serta autentikasi NextAuth, dideploy ke Vercel
+            lewat CI/CD.</p>
+        </div>
+        <div class="col-span-8 space-y-7">
+          <h1 class="text-3xl font-bold">Blog modern</h1>
+          <img loading="lazy" src="images/blog.jpg" alt="">
+          <p class="text-lg">Platform blog modern dengan Next.js dan autentikasi NextAuth, kelola proyek dengan
+            Git dan GitHub, lalu deploy
+            otomatis ke Vercel menggunakan pipeline CI/CD.</p>
+        </div>
+      </div>
+    </section>
+    <section class="grid grid-cols-12 text-orang-100 py-32">
+      <div class="col-start-2 col-span-12 space-y-20">
+        <h1 class="text-7xl font-black"><span class="text-stroke text-black italic">HANYA BUTUH </span><span>4 BULAN</span><br><span>UNTUK KAMU!</span></h1>
+      </div>
     </section>
   </main>
-  <script>
-    const data = [
-      ["Fondasi Web Development", "Mulai perjalananmu jadi web dev dengan HTML, CSS, Tailwind CSS, dan Flowbite buat website kece dan responsif.", "images/card1.svg"],
-      ["Interaktivitas & Animasi", "Bikin websitemu lebih hidup dengan JavaScript, DOM Manipulation, dan GSAP biar interaktif dan smooth.", "images/card2.svg"],
-      ["Frontend & Backend Development", "Bangun aplikasi keren pakai MongoDB, Express.js, Node.js, Prisma untuk API, React.js untuk Frontend dan Typescript.", "images/card3.svg"],
-      ["Deployment & Pengelolaan Proyek", "Biar makin kece, kita bakal belajar Next.js, NextAuth, Git, dan GitHub, terus deploy ke Vercel biar websitemu siap online!", "images/card4.svg"]
-    ];
-
-    const cardWrapper = document.getElementById("cardWrapper");
-
-    data.forEach(item => {
-      const card = document.createElement("div");
-      card.classList.add("col-span-2", "bg-zinc-900", "text-orange-50", "rounded-[50px]", "px-14", "py-8", "flex", "flex-col");
-
-      const title = document.createElement("h3");
-      title.classList.add("text-2xl", "font-semibold", "mt-4");
-      title.textContent = item[0];
-      card.appendChild(title);
-
-      const description = document.createElement("p");
-      description.classList.add("mt-2", "text-lg", "font-normal", "flex-grow");
-      description.textContent = item[1];
-      card.appendChild(description);
-
-      const image = document.createElement("img");
-      image.src = item[2];
-      image.classList.add("mt-20", "w-60", "h-60", "object-contain");
-      card.appendChild(image);
-
-      cardWrapper.appendChild(card);
-    });
-
-
-  </script>
+  <script src="app.js"></script>
 </body>
 
 </html>
