@@ -35,10 +35,28 @@
     background-position: center;
     background-size: contain;
   }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+      clip-path: inset(100% 100% 0 0);
+    }
+
+    to {
+      opacity: 1;
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  .block {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
+  }
 </style>
 
 <body class="bg-black">
-  <header class="fixed w-full flex justify-between items-center text-orange-50 p-10 backdrop-blur-2xl">
+  <header class="fixed z-10 w-full flex justify-between items-center text-orange-50 p-10 backdrop-blur-2xl">
     <h2 class="text-3xl font-semibold">Ketjeh Developer</h2>
     <nav>
       <ul class="flex items-center gap-x-14 text-xl">
@@ -76,13 +94,13 @@
     <video class="col-span-12 w-full" autoplay loop muted>
       <source src="videos/video1.mp4" type="video/mp4">
     </video>
-    <section class="background h-screen flex flex-col justify-center items-center text-center px-[500px]">
+    <section class="block background h-screen flex flex-col justify-center items-center text-center px-[500px]">
       <h1 class="text-7xl font-black"><span class="text-stroke text-transparent italic">JADI JAGOAN
           DALAM</span><br><span class="text-orange-100">4 BULAN</span></h1>
-      <p class="text-2xl mt-12">Ga cuma mimpi, bikin coding jadi hobi! Dalam <span class="font-bold">1 bulan</span>,
+      <p class="text-2xl mt-12">Ga cuma mimpi, bikin coding jadi hobi! Dalam <span class="font-bold">4 bulan</span>,
         kamu bakal jadi developer kece yang siap bikin project keren. <br> Are you ready to glow up?</p>
     </section>
-    <section class="grid grid-cols-12 py-32">
+    <section class="block grid grid-cols-12 py-32">
       <div class="col-start-2 col-span-2 space-y-20">
         <h1 class="text-7xl font-black italic"><span class="text-stroke text-black">YANG
             AKAN</span><br><span>KAMU KUASAI!</span></h1>
@@ -91,7 +109,7 @@
       </div>
       <div id="cardWrapper" class="col-start-5 col-span-7 grid grid-cols-4 gap-2"></div>
     </section>
-    <section class="grid grid-cols-12 text-orang-100 py-32">
+    <section class="block grid grid-cols-12 text-orange-100 py-32">
       <div class="col-start-2 col-span-12 space-y-20">
         <h1 class="text-7xl font-black italic"><span class="text-stroke text-black">TARGET</span><br><span>KAMU!</span>
         </h1>
@@ -122,22 +140,55 @@
           <p class="text-lg">Kelola tugas dengan mudah, dengan Next.js, serta autentikasi NextAuth, dideploy ke Vercel
             lewat CI/CD.</p>
         </div>
-        <div class="col-span-8 space-y-7">
+        <div class="col-span-6 space-y-7">
           <h1 class="text-3xl font-bold">Blog modern</h1>
           <img loading="lazy" src="images/blog.jpg" alt="">
-          <p class="text-lg">Platform blog modern dengan Next.js dan autentikasi NextAuth, kelola proyek dengan
-            Git dan GitHub, lalu deploy
-            otomatis ke Vercel menggunakan pipeline CI/CD.</p>
+          <p class="text-lg">Platform blog modern dengan Next.js dan autentikasi NextAuth, kelola proyek dengan Git dan
+            GitHub, lalu deploy otomatis ke Vercel menggunakan pipeline CI/CD.</p>
         </div>
       </div>
     </section>
-    <section class="grid grid-cols-12 text-orang-100 py-32">
+    <section class="block grid grid-cols-12 text-orang-100 py-32">
       <div class="col-start-2 col-span-12 space-y-20">
-        <h1 class="text-7xl font-black"><span class="text-stroke text-black italic">HANYA BUTUH </span><span>4 BULAN</span><br><span>UNTUK KAMU!</span></h1>
+        <h1 class="text-7xl font-black"><span class="text-stroke text-black italic">HANYA BUTUH </span><span>4
+            BULAN</span><br><span>UNTUK KAMU!</span></h1>
+      </div>
+      <div id="judulWrapper" class="mt-32 col-start-2 col-end-12 grid grid-cols-4 gap-7"></div>
+      <div id="barWrapper" class="col-start-2 col-end-12 grid grid-cols-4 gap-7"></div>
+      <div id="descWrapper" class="col-start-2 col-end-12 grid grid-cols-4 gap-7"></div>
+    </section>
+    <section class="block grid grid-cols-12 text-orange-100 py-32">
+      <div class="col-start-2 col-span-4 space-y-20">
+        <h1 class="text-7xl font-black italic"><span class="text-stroke text-black">PILIH <span>PAKET</span><br>
+            YANG</span><span> SESUAI!</span></h1>
+        <h2 class="text-2xl">Temukan paket belajar yang sesuai dengan kebutuhanmu. Mulai dari dasar hingga tingkat
+          lanjut, kami siap membimbingmu
+          menjadi Web Developer profesional.</h2>
+        <a class="bg-amber-400 hover:bg-amber-500 inline-flex items-center gap-x-3 text-2xl text-zinc-800 font-bold py-5 px-9 rounded-full"
+          href="">Daftar <img class="fill-orange-50 w-6 h-6" src="images/icons/arrow-right.svg" alt=""></a>
+      </div>
+      <div id="kelasWrapper" class="col-start-6 col-span-6 grid grid-cols-12 gap-7"></div>
+    </section>
+    <section class="block grid grid-cols-12 text-orange-100 py-32">
+      <div class="col-start-2 col-span-2 space-y-20">
+        <h1 class="text-8xl font-black">FREQUENTLY <span class="text-stroke text-black">ASKED</span> QUESTIONS</h1>
+      </div>
+      <div class="mt-32 col-start-2 col-end-12">
+        <ul id="faqList"></ul>
       </div>
     </section>
+    <footer class="grid grid-cols-12 text-orange-100 text-xl font-lighter pb-16">
+      <section class="col-start-2 col-end-12">
+        <div class="flex gap-x-3">
+          <a class="hover:underline" target="_blank" href="https://instagram.com/joanorlandopurba">Instagram</a>
+          <p>|</p>
+          <a class="hover:underline" target="_blank" href="https://linkedin.com/in/joanpurba">LinkedIn</a>
+        </div>
+      </section>
+    </footer>
   </main>
   <script src="app.js"></script>
+  <script src="jquery.js"></script>
 </body>
 
 </html>
