@@ -37,32 +37,32 @@
   <main class="col-span-12 lg:col-start-3 lg:col-end-11 px-5 md:px-10 lg:px-0">
     <section class="flex flex-col items-center">
       <img class="w-32 md:w-48 w-32 md:h-48 rounded-full" src="images/profil.jpg" alt="">
-      <h1 class="my-10 text-xl md:text-3xl font-semibold">Joan</h1>
+      <h1 class="my-5 sm:my-10 text-xl md:text-3xl font-semibold">Joan</h1>
     </section>
     <section class="w-full">
       <div class="flex justify-between items-center">
-        <h2 class="text-md sm:text-xl font-semibold">Data diri</h2>
+        <h2 class="text-sm sm:text-xl font-semibold">Data diri</h2>
         <button class="editBtn bg-zinc-600 rounded-md text-sm md:text-md font-semibold py-2 px-3">Edit</button>
       </div>
       <section id="dataDiri" class="py-5 lg:p-5 space-y-3"></section>
     </section>
     <hr class="my-10 border-zinc-700">
     <section class="w-full">
-      <h2 class="text-md sm:text-xl font-semibold">Data kelas</h2>
+      <h2 class="text-sm sm:text-xl font-semibold">Data kelas</h2>
       <section class="grid grid-cols-12 py-5 lg:p-5">
         <div class="col-span-12 md:col-span-6 lg:col-span-6 2xl:col-span-4 bg-zinc-800 rounded-xl p-3 sm:p-5 sm:p-7">
           <h3 class="text-md sm:text-2xl font-semibold">Fondasi Web Development</h3>
-          <p class="mt-2 text-md md:text-lg font-normal flex-grow">Pelajari HTML, CSS, Tailwind, dan SEO untuk website
+          <p class="mt-2 text-xs md:text-lg font-normal flex-grow">Pelajari HTML, CSS, Tailwind, dan SEO untuk website
             responsif
             dan
             terstruktur.</p>
           <div class="mt-20 flex gap-3 flex-wrap">
-            <p class="bg-zinc-700 hover:bg-amber-500 text-sm sm:text-md py-2 px-3 rounded-md">HTML</p>
-            <p class="bg-zinc-700 hover:bg-amber-500 text-sm sm:text-md py-2 px-3 rounded-md">CSS</p>
-            <p class="bg-zinc-700 hover:bg-amber-500 text-sm sm:text-md py-2 px-3 rounded-md">Tailwind CSS</p>
-            <p class="bg-zinc-700 hover:bg-amber-500 text-sm sm:text-md py-2 px-3 rounded-md">SEO Dasar</p>
+            <p class="bg-zinc-700 hover:bg-amber-500 text-xs sm:text-md py-2 px-3 rounded-md">HTML</p>
+            <p class="bg-zinc-700 hover:bg-amber-500 text-xs sm:text-md py-2 px-3 rounded-md">CSS</p>
+            <p class="bg-zinc-700 hover:bg-amber-500 text-xs sm:text-md py-2 px-3 rounded-md">Tailwind CSS</p>
+            <p class="bg-zinc-700 hover:bg-amber-500 text-xs sm:text-md py-2 px-3 rounded-md">SEO Dasar</p>
           </div>
-          <button class="hapusBtn w-full mt-3 bg-red-500 text-sm sm:text-md font-semibold rounded-md py-2">Hapus
+          <button class="hapusBtn w-full mt-3 bg-red-500 text-xs sm:text-md font-semibold rounded-md py-2">Hapus
             kelas</button>
         </div>
       </section>
@@ -71,21 +71,21 @@
             alt="">Perihal penghapusan kelas!</h2>
         <p class="mt-2 sm:mt-7 text-sm sm:text-md">Kamu bisa hapus kelas kapan aja. Tapi soal refund, ada aturannya :</p>
         <ul class="my-5 list-disc pl-5">
-          <li class="text-sm sm:text-md">
+          <li class="text-xs sm:text-md">
             Refund bisa dilakukan kalau kelas belum jalan atau baru berlangsung kurang dari 2 minggu (14 hari).
           </li>
-          <li class="text-sm sm:text-md">
+          <li class="text-xs sm:text-md">
             Refund gak bisa kalau kamu sudah ikut kelas lebih dari 2 minggu.
           </li>
         </ul>
-        <p class="text-sm sm:text-md">Kalau masih dalam batas waktu refund, langsung hubungi
+        <p class="text-xs sm:text-md">Kalau masih dalam batas waktu refund, langsung hubungi
           <a target="_blank"
             href="https://api.whatsapp.com/send/?phone=6282275338090&text&type=phone_number&app_absent=0"
             class="underline">admin</a> buat prosesnya! 🚀
         </p>
       </div>
     </section>
-    <button class="hapusBtn w-full md:w-52 mt-10 bg-red-500 text-sm sm:text-xl font-bold rounded-lg p-3">Hapus
+    <button class="hapusBtn w-full md:w-52 mt-10 bg-red-500 text-xs sm:text-xl font-bold rounded-lg p-3">Hapus
       akun</button>
   </main>
   <footer
@@ -159,8 +159,8 @@
     div.classList.add("w-full", "flex", "items-center", "bg-zinc-800", "rounded-md");
 
     div.innerHTML = `
-      <p class="h-full text-sm sm:text-xl bg-zinc-700 py-2 px-3 rounded-s-md flex items-center">${item.label}</p>
-      <p class="text-sm sm:text-xl font-semibold px-3 break-words">${item.value}</p>
+      <p class="h-full text-xs sm:text-xl bg-zinc-700 py-2 px-3 rounded-s-md flex items-center">${item.label}</p>
+      <p class="text-xs sm:text-xl font-semibold px-3 break-words">${item.value}</p>
     `;
 
     profileSection.appendChild(div);
