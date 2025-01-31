@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ketjeh Developer</title>
+  <link rel="icon" href="images/logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+  @font-face {
+    font-family: "Montreux Jazz Soft Regular";
+    src: url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.eot");
+    src: url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.eot?#iefix")format("embedded-opentype"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.woff2")format("woff2"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.woff")format("woff"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.ttf")format("truetype"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.svg#Montreux Jazz Soft Regular")format("svg");
+  }
+
+  * {
+    letter-spacing: 1px;
+  }
+
+  .text-stroke {
+    -webkit-text-stroke: 1px #fff7ed;
+    text-stroke: 1px #fff7ed;
+  }
+</style>
+
+<body class="bg-black text-orange-100">
+  <header class="fixed z-10 w-full flex justify-between items-center text-orange-50 p-10 backdrop-blur-2xl">
+    <a class="text-3xl font-semibold" href="dashboard.html">Ketjeh Developer</a>
+    <nav>
+      <ul class="flex items-center gap-x-14 text-xl">
+        <li>
+          <a href="beliPaket.html">Paket belajar</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://chat.whatsapp.com/IbhgFpIKIowIREo6pOJMIQ">Gabung komunitas</a>
+        </li>
+        <li>
+          <a href="profil.html">
+            <img class="w-12 rounded-full" src="images/profil.jpg" alt="">
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="py-36 px-10">
+    <section class="px-20">
+      <div class="flex justify-between">
+        <h1 class="text-2xl font-semibold">⏰ Jadwal kamu untuk minggu ini - Ruang D4</h1>
+        <div class="flex gap-x-10">
+          <div class="flex items-center gap-x-2">
+            <div class="w-5 h-5 bg-red-500 rounded-full"></div>
+            <p>Sudah berlangsung</p>
+          </div>
+          <div class="flex items-center gap-x-2">
+            <div class="w-5 h-5 bg-amber-500 rounded-full"></div>
+            <p>Sedang berlangsung</p>
+          </div>
+          <div class="flex items-center gap-x-2">
+            <div class="w-5 h-5 bg-blue-500 rounded-full"></div>
+            <p>Akan berlangsung</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 grid gap-2 md:gap-4 grid-cols-[auto_1fr]">
+        <div class="timeline hidden md:grid">
+          <div class="spacer"></div>
+          <div class="time-marker">1 PM</div>
+          <div class="time-marker">2 PM</div>
+          <div class="time-marker">3 PM</div>
+          <div class="time-marker">4 PM</div>
+          <div class="time-marker">5 PM</div>
+          <div class="time-marker">6 PM</div>
+        </div>
+        <div id="days-container" class="days flex gap-2 overflow-x-auto whitespace-nowrap 
+        lg:grid lg:grid-cols-5">
+        </div>
+      </div>
+    </section>
+    <hr class="my-10 border-zinc-700">
+    <section class="px-20">
+      <h1 class="text-2xl font-semibold">📑 Riwayat Quiz</h1>
+      <div class="mt-5 w-full flex items-center bg-orange-100 text-black font-semibold gap-x-5 rounded-md p-6">
+        <img class="w-14 h-14" src="images/icons/file-text.svg" alt="">
+        <div class="w-full flex justify-between items-center">
+          <div class="space-y-1">
+            <p class="text-xl font-bold">Quiz | Teori : Pengenalan IT</p>
+            <p>Skor : 100</p>
+          </div>
+          <img class="w-8 h-8" src="images/icons/check.svg" alt="">
+        </div>
+      </div>
+    </section>
+    <hr class="my-10 border-zinc-700">
+    <section class="px-20">
+      <h1 class="text-2xl font-semibold">📦 Paket belajar</h1>
+      <div class="mt-5 w-full  grid grid-cols-12 gap-3">
+        <div class="col-span-3 bg-zinc-800 rounded-xl p-7">
+          <h3 class="text-2xl font-semibold">Fondasi Web Development</h3>
+          <p class="mt-2 text-lg font-normal flex-grow">Pelajari HTML, CSS, Tailwind, dan SEO untuk website responsif
+            dan terstruktur.</p>
+          <div class="mt-20 flex gap-3 flex-wrap">
+            <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">HTML</p>
+            <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">CSS</p>
+            <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">Tailwind CSS</p>
+            <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">SEO Dasar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="grid grid-cols-12 text-orange-100 text-xl font-lighter p-10">
+    <div class="flex gap-x-3">
+      <a class="hover:underline" target="_blank" href="https://instagram.com/joanorlandopurba">Instagram</a>
+      <p>|</p>
+      <a class="hover:underline" target="_blank" href="https://linkedin.com/in/joanpurba">LinkedIn</a>
+    </div>
+  </footer>
+  <a target="_blank" href="https://api.whatsapp.com/send/?phone=6282275338090&text&type=phone_number&app_absent=0"
+    class="fixed bottom-10 right-10 bg-amber-500 rounded-full p-5">
+    <img class="w-7 h-7" src="images/icons/phone2.svg" alt="">
+  </a>
+</body>
+<script>
+  const daysContainer = document.getElementById("days-container");
+
+  const eventsData = [
+    { date: "2024-02-05", title: "Pengenalan IT", time: "1 PM - 4 PM", color: "bg-red-500", startRow: 1, endRow: 7 },
+    { date: "2024-02-05", title: "Quiz | Teori", time: "5 PM - 5:30 PM", color: "bg-red-500", startRow: 8, endRow: 9 },
+    { date: "2024-02-06", title: "Pengenalan Website", time: "1 PM - 4 PM", color: "bg-amber-500", startRow: 1, endRow: 7 },
+    { date: "2024-02-06", title: "Quiz | Teori", time: "5 PM - 5:30 PM", color: "bg-amber-500", startRow: 8, endRow: 9 },
+    { date: "2024-02-07", title: "Tag HTML", time: "1 PM - 4 PM", color: "bg-blue-500", startRow: 1, endRow: 7 },
+    { date: "2024-02-07", title: "Quiz | Praktek", time: "5 PM - 6 PM", color: "bg-blue-500", startRow: 8, endRow: 10 },
+    { date: "2024-02-08", title: "HTML: Table, Form", time: "1 PM - 4 PM", color: "bg-blue-500", startRow: 1, endRow: 7 },
+    { date: "2024-02-08", title: "Quiz | Praktek", time: "5 PM - 6 PM", color: "bg-blue-500", startRow: 8, endRow: 10 },
+    { date: "2024-02-09", title: "Pengenalan CSS", time: "1 PM - 4 PM", color: "bg-blue-500", startRow: 1, endRow: 7 },
+    { date: "2024-02-09", title: "Quiz | Teori", time: "5 PM - 5:30 PM", color: "bg-blue-500", startRow: 8, endRow: 9 },
+  ];
+
+  let startDate = new Date("2024-02-05");
+
+  for (let i = 0; i < 5; i++) {
+    let currentDate = new Date(startDate);
+    currentDate.setDate(startDate.getDate() + i);
+
+    let dayNumber = currentDate.getDate();
+    let month = currentDate.toLocaleString("default", { month: "short" });
+
+    let dateString = currentDate.toISOString().split("T")[0];
+
+    let eventsForThisDay = eventsData.filter(event => event.date === dateString);
+
+    let dayElement = document.createElement("div");
+    dayElement.className = "p-2 bg-zinc-800 rounded-md min-w-[90vw] sm:min-w-[90vw] md:min-w-[90vw] lg:min-w-0";
+
+    let eventsHTML = eventsForThisDay.map(event => `
+      <div class="${event.color} rounded-md px-2 py-1 col-span-1 row-start-${event.startRow} row-end-${event.endRow}">
+          <p class="font-semibold">${event.title}</p>
+          <p class="text-sm">${event.time}</p>
+      </div>
+    `).join("");
+
+    dayElement.innerHTML = `
+      <div class="date flex items-center gap-2">
+          <p class="text-2xl font-bold">${dayNumber + " " + month}</p>
+      </div>
+      <div class="events grid" style="grid-template-rows: repeat(10, 50px);">
+          ${eventsHTML || `<p class="text-gray-400">No events</p>`}
+      </div>
+    `;
+
+    daysContainer.appendChild(dayElement);
+  }
+</script>
+
+</html>

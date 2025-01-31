@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kejeh Developer</title>
+  <link rel="icon" href="images/logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+  @font-face {
+    font-family: "Montreux Jazz Soft Regular";
+    src: url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.eot");
+    src: url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.eot?#iefix")format("embedded-opentype"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.woff2")format("woff2"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.woff")format("woff"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.ttf")format("truetype"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.svg#Montreux Jazz Soft Regular")format("svg");
+  }
+
+  * {
+    letter-spacing: 1px;
+  }
+
+  .text-stroke {
+    -webkit-text-stroke: 1px #fff7ed;
+    text-stroke: 1px #fff7ed;
+  }
+
+  section:nth-child(2) {
+    background: url('images/register-sidebar.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+</style>
+
+<body class="bg-black">
+  <main class="h-screen grid grid-cols-12 text-orange-100">
+    <section class="col-span-5 flex flex-col justify-between p-20">
+      <div>
+        <h1 class="text-7xl font-bold">Masuk</h1>
+        <p class="mt-5 w-[600px] text-xl font-light">Akses semua fitur eksklusif dan jadi bagian dari komunitas developer kece!</p>
+        <form class="mt-10" action="">
+          <ul class="space-y-7">
+            <li>
+              <input
+                class="w-full bg-transparent border-b border-zinc-500 focus:border-orange-100 text-orange-100 placeholder-zinc-500 text-xl outline-none p-7"
+                type="text" placeholder="Email" required>
+            </li>
+            <li>
+              <div class="flex justify-between items-center focus:border-orange-100 border-b border-zinc-500 p-7">
+                <input id="passwordInput"
+                  class="w-full bg-transparent text-orange-100 placeholder-zinc-500 text-xl outline-none"
+                  type="password" placeholder="Password" required>
+                <img id="togglePassword" src="images/icons/eye-off.svg" class="cursor-pointer" alt="">
+              </div>
+            </li>
+            <li>
+              <a
+                class="block w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-2xl font-bold text-center rounded-full py-5" href="dashboard.html">Masuk</a>
+            </li>
+            <li>
+              <p class="text-lg">Belum memiliki akun? <a href="register.html" class="hover:underline text-amber-500">Daftar</a></p>
+            </li>
+          </ul>
+        </form>
+      </div>
+      <div class="flex gap-x-3">
+        <a class="hover:underline" target="_blank" href="https://instagram.com/joanorlandopurba">Instagram</a>
+        <p>|</p>
+        <a class="hover:underline" target="_blank" href="https://linkedin.com/in/joanpurba">LinkedIn</a>
+      </div>
+    </section>
+    <section class="col-span-7"></section>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const passwordInput = document.getElementById("passwordInput");
+      const togglePassword = document.getElementById("togglePassword");
+      const passwordContainer = passwordInput.parentElement;
+
+      togglePassword.addEventListener("click", function () {
+        const isPassword = passwordInput.type === "password";
+        passwordInput.type = isPassword ? "text" : "password";
+        togglePassword.src = isPassword ? "images/icons/eye.svg" : "images/icons/eye-off.svg";
+      });
+
+      passwordInput.addEventListener("focus", function () {
+        passwordContainer.classList.add("border-orange-100");
+      });
+
+      passwordInput.addEventListener("blur", function () {
+        passwordContainer.classList.remove("border-orange-100");
+      });
+
+      console.log("Script berjalan!");
+    });
+  </script>
+
+</body>
+
+</html>

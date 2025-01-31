@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ketjeh Developer</title>
+  <link rel="icon" href="images/logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+  @font-face {
+    font-family: "Montreux Jazz Soft Regular";
+    src: url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.eot");
+    src: url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.eot?#iefix")format("embedded-opentype"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.woff2")format("woff2"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.woff")format("woff"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.ttf")format("truetype"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.svg#Montreux Jazz Soft Regular")format("svg");
+  }
+
+  * {
+    letter-spacing: 1px;
+  }
+
+  .mapouter {
+    position: relative;
+    text-align: right;
+    height: 100%;
+  }
+
+  .gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    width: 100%;
+    height: 100%;
+  }
+
+  .gmap_iframe {
+    width: 100% !important;
+    height: 100% !important;
+  }
+</style>
+
+<body class="bg-black text-orange-100">
+  <header class="fixed z-10 w-full flex justify-between items-center text-orange-50 p-10 backdrop-blur-2xl">
+    <a class="text-3xl font-semibold" href="dashboard.html">Ketjeh Developer</a>
+    <nav>
+      <ul class="flex items-center gap-x-14 text-xl">
+        <li>
+          <a href="beliPaket.html">Paket belajar</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://chat.whatsapp.com/IbhgFpIKIowIREo6pOJMIQ">Gabung komunitas</a>
+
+        </li>
+        <li>
+          <a href="profil.html">
+            <img class="w-12 rounded-full" src="images/profil.jpg" alt="">
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="py-36 px-10">
+    <section class="px-20">
+      <h1 class="text-2xl font-semibold">📦 Paket belajar kamu</h1>
+      <div class="mt-5 w-full  grid grid-cols-12 gap-3">
+        <div class="col-span-3 bg-zinc-800 rounded-xl p-7">
+          <h3 class="text-2xl font-semibold">Fondasi Web Development</h3>
+          <p class="mt-2 text-lg font-normal flex-grow">Pelajari HTML, CSS, Tailwind, dan SEO untuk website responsif
+            dan
+            terstruktur.</p>
+          <div class="mt-20 flex gap-3 flex-wrap">
+            <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">HTML</p>
+            <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">CSS</p>
+            <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">Tailwind CSS</p>
+            <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">SEO Dasar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="my-10 border-zinc-700">
+    <section class="px-20">
+      <h1 class="text-2xl font-semibold">🛍️ Beli paket belajar</h1>
+      <div id="cardWrapper" class="mt-5 w-full  grid grid-cols-12 gap-3"></div>
+    </section>
+  </main>
+  <footer class="grid grid-cols-12 text-orange-100 text-xl font-lighter p-10">
+    <div class="flex gap-x-3">
+      <a class="hover:underline" target="_blank" href="https://instagram.com/joanorlandopurba">Instagram</a>
+      <p>|</p>
+      <a class="hover:underline" target="_blank" href="https://linkedin.com/in/joanpurba">LinkedIn</a>
+    </div>
+  </footer>
+  <a target="_blank" href="https://api.whatsapp.com/send/?phone=6282275338090&text&type=phone_number&app_absent=0"
+    class="fixed bottom-10 right-10 bg-amber-500 rounded-full p-5">
+    <img class="w-7 h-7" src="images/icons/phone2.svg" alt="">
+  </a>
+</body>
+<div id="popup" class="fixed z-20 inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+  <div class="w-[800px] bg-zinc-700 text-orange-100 shadow-lg p-6 rounded-lg">
+    <h2 class="text-xl font-semibold">Interaktivitas & Animasi</h2>
+    <p class="mt-2 text-lg">Kuasai JavaScript, TypeScript, GSAP, dan Fetch API untuk website interaktif.</p>
+    <p class="mt-10">Materi yang kamu dapat</p>
+    <div class="mt-5 flex gap-3 flex-wrap">
+      <p class="bg-zinc-600 hover:bg-amber-500 py-2 px-3 rounded-md">JavaScript</p>
+      <p class="bg-zinc-600 hover:bg-amber-500 py-2 px-3 rounded-md">TypeScript</p>
+      <p class="bg-zinc-600 hover:bg-amber-500 py-2 px-3 rounded-md">DOM Manipulation</p>
+      <p class="bg-zinc-600 hover:bg-amber-500 py-2 px-3 rounded-md">GSAP</p>
+      <p class="bg-zinc-600 hover:bg-amber-500 py-2 px-3 rounded-md">AJAX/Fetch API</p>
+    </div>
+    <p class="mt-10">Masa Belajar</p>
+    <ul class="list-disc pl-5">
+      <li>1 Bulan</li>
+      <li>Dimulai dari 20 Feb - 20 Mar 2025</li>
+    </ul>
+    <p class="mt-10">Lokasi Belajar</p>
+    <div class="mapouter w-full my-2">
+      <div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0"
+          marginwidth="0"
+          src="https://maps.google.com/maps?&amp;hl=en&amp;q=Sukabirus&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
+          href="https://sprunkiplay.com/"></a></div>
+    </div>
+    <h2 class="font-bold">Ruang D4 (lantai 4 ruang 4)</h2>
+    <p class="mt-10">Harga</p>
+    <h1 class="mt-2 text-5xl text-amber-400 font-bold">Rp500.000</h1>
+    <div class="mt-3 w-full inline-flex gap-3">
+      <button id="closePopup" class="mt-4 w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+        Tutup
+      </button>
+      <button id="closePopup" class="mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+        Beli
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const materi = [
+    {
+      title: "Interaktivitas & Animasi",
+      description: "Kuasai JavaScript, TypeScript, GSAP, dan Fetch API untuk website interaktif.",
+      techs: ["JavaScript", "TypeScript", "DOM Manipulation", "GSAP", "AJAX/Fetch API"]
+    },
+    {
+      title: "Frontend & Backend Development",
+      description: "Gunakan React.js, Node.js, MongoDB, dan Prisma untuk aplikasi keren dengan autentikasi JWT.",
+      techs: ["React.js", "Node.js", "Express.js", "MongoDB", "Prisma", "JWT"]
+    },
+    {
+      title: "Deployment & Pengelolaan Proyek",
+      description: "Belajar Git, Next.js, dan deploy otomatis ke Vercel dengan CI/CD.",
+      techs: ["Git", "GitHub", "Next.js", "NextAuth", "Vercel", "CI/CD"]
+    }
+  ];
+
+  const cardWrapper = document.getElementById("cardWrapper");
+  const popup = document.getElementById("popup");
+  const closePopup = document.getElementById("closePopup");
+
+  materi.forEach(item => {
+    const card = document.createElement("div");
+    card.classList.add("col-span-3", "bg-zinc-800", "rounded-xl", "p-7", "flex", "flex-col", "justify-between");
+
+    card.innerHTML = `
+      <h3 class="text-2xl font-semibold">${item.title}</h3>
+      <p class="mt-2 text-lg">${item.description}</p>
+      <div class="mt-5 flex gap-3 flex-wrap">
+        ${item.techs.map(tech => `<p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">${tech}</p>`).join('')}
+      </div>
+      <button class="mt-5 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-lg font-bold text-zinc-800 py-2 rounded-md beli-btn">
+        Beli
+      </button>
+    `;
+
+    cardWrapper.appendChild(card);
+  });
+
+  document.querySelectorAll(".beli-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      popup.classList.remove("hidden");
+    });
+  });
+
+  closePopup.addEventListener("click", () => {
+    popup.classList.add("hidden");
+  });
+
+</script>
+
+</html>
