@@ -46,7 +46,7 @@
       </div>
       <section id="dataDiri" class="py-5 lg:p-5 space-y-3"></section>
     </section>
-    <hr class="my-10 border-zinc-700">
+    <hr class="my-5 md:my-10 border-zinc-700">
     <section class="w-full">
       <h2 class="text-sm sm:text-xl font-semibold">Data kelas</h2>
       <section class="grid grid-cols-12 py-5 lg:p-5">
@@ -69,7 +69,8 @@
       <div class="bg-zinc-800 p-3 sm:p-5 rounded-md">
         <h2 class="inline-flex items-center font-semibold text-sm sm:text-xl gap-x-2"><img src="images/icons/info.svg"
             alt="">Perihal penghapusan kelas!</h2>
-        <p class="mt-2 sm:mt-7 text-sm sm:text-md">Kamu bisa hapus kelas kapan aja. Tapi soal refund, ada aturannya :</p>
+        <p class="mt-2 sm:mt-7 text-sm sm:text-md">Kamu bisa hapus kelas kapan aja. Tapi soal refund, ada aturannya :
+        </p>
         <ul class="my-5 list-disc pl-5">
           <li class="text-xs sm:text-md">
             Refund bisa dilakukan kalau kelas belum jalan atau baru berlangsung kurang dari 2 minggu (14 hari).
@@ -99,43 +100,47 @@
     </div>
   </footer>
 </body>
-<div id="editPopup" class="fixed z-20 inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-  <div class="w-[800px] bg-zinc-700 text-orange-100 shadow-lg p-6 rounded-lg">
-    <h2 class="text-xl font-semibold">Edit data diri kamu</h2>
+<div id="editPopup" class="fixed z-20 inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden px-5">
+  <div class="w-full md:w-[800px] bg-zinc-700 text-orange-100 shadow-lg p-6 rounded-lg">
+    <h2 class="text-xs sm:text-md md:text-xl font-semibold">Edit data diri kamu</h2>
     <form class="w-full mt-5" action="">
       <ul class="space-y-5">
         <li>
-          <input class="w-full bg-transparent outline-none border p-2 text-xl rounded-md" type="text" value="Joan"
-            placeholder="Masukkan nama">
+          <input class="w-full bg-transparent outline-none border p-2 text-xs sm:text-md md:text-xl rounded-md"
+            type="text" value="Joan" placeholder="Masukkan nama">
         </li>
         <li>
-          <input class="w-full bg-transparent outline-none border p-2 text-xl rounded-md" type="text"
-            value="joanpurba@gmail.com" placeholder="Masukkan email">
+          <input class="w-full bg-transparent outline-none border p-2 text-xs sm:text-md md:text-xl rounded-md"
+            type="text" value="joanpurba@gmail.com" placeholder="Masukkan email">
         </li>
         <li>
-          <input class="w-full bg-transparent outline-none border p-2 text-xl rounded-md" type="text" value="joan123"
-            placeholder="Masukkan password">
+          <input class="w-full bg-transparent outline-none border p-2 text-xs sm:text-md md:text-xl rounded-md"
+            type="text" value="joan123" placeholder="Masukkan password">
         </li>
         <li>
-          <input class="w-full bg-transparent outline-none border p-2 text-xl rounded-md" type="text"
-            value="Jl. Laravel Blok 6 Jakarta Selatan" placeholder="Masukkan alamat">
+          <input class="w-full bg-transparent outline-none border p-2 text-xs sm:text-md md:text-xl rounded-md"
+            type="text" value="Jl. Laravel Blok 6 Jakarta Selatan" placeholder="Masukkan alamat">
         </li>
         <li class="flex gap-3">
-          <button class="w-full bg-red-400 hover:bg-red-500 font-bold text-orange-100 rounded-md py-3">Batal</button>
-          <button class="w-full bg-blue-400 hover:bg-blue-500 font-bold text-orange-100 rounded-md py-3">Edit</button>
+          <button
+            class="w-full bg-red-400 hover:bg-red-500 text-xs sm:text-sm md:text-lg font-medium md:font-bold text-orange-100 rounded-md py-2 md:py-3">Batal</button>
+          <button
+            class="w-full bg-blue-400 hover:bg-blue-500 text-xs sm:text-sm md:text-lg font-medium md:font-bold text-orange-100 rounded-md py-2 md:py-3">Edit</button>
         </li>
       </ul>
     </form>
   </div>
 </div>
-<div id="hapusPopup" class="fixed z-20 inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-  <div class="w-[400px] bg-zinc-700 text-orange-100 shadow-lg p-6 rounded-lg">
-    <h2 class="text-center text-xl font-semibold">Kamu yakin mau hapus?</h2>
+<div id="hapusPopup" class="fixed z-20 inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden px-5">
+  <div class="w-full md:w-[400px] bg-zinc-700 text-orange-100 shadow-lg p-6 rounded-lg">
+    <h2 class="text-center text-xs sm:text-md md:text-xl font-semibold">Kamu yakin mau hapus?</h2>
     <form class="w-full mt-20" action="">
       <ul class="space-y-5">
         <li class="flex gap-3">
-          <button class="w-full bg-red-400 hover:bg-red-500 font-bold text-orange-100 rounded-md py-3">Batal</button>
-          <button class="w-full bg-blue-400 hover:bg-blue-500 font-bold text-orange-100 rounded-md py-3">Yakin</button>
+          <button
+            class="w-full bg-red-400 hover:bg-red-500 text-xs sm:text-sm md:text-lg font-medium md:font-bold text-orange-100 rounded-md py-2 md:py-3">Batal</button>
+          <button
+            class="w-full bg-blue-400 hover:bg-blue-500 text-xs sm:text-sm md:text-lg font-medium md:font-bold text-orange-100 rounded-md py-2 md:py-3">Yakin</button>
         </li>
       </ul>
     </form>
@@ -159,8 +164,8 @@
     div.classList.add("w-full", "flex", "items-center", "bg-zinc-800", "rounded-md");
 
     div.innerHTML = `
-      <p class="h-full text-xs sm:text-xl bg-zinc-700 py-2 px-3 rounded-s-md flex items-center">${item.label}</p>
-      <p class="text-xs sm:text-xl font-semibold px-3 break-words">${item.value}</p>
+      <p class="h-full text-xs sm:text-md md:text-xl bg-zinc-700 py-2 px-3 rounded-s-md flex items-center">${item.label}</p>
+      <p class="text-xs sm:text-md md:text-xl font-semibold px-3 break-words">${item.value}</p>
     `;
 
     profileSection.appendChild(div);
