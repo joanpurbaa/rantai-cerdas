@@ -103,47 +103,43 @@
 <div id="editPopup" class="fixed z-20 inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden px-5">
   <div class="w-full md:w-[800px] bg-zinc-700 text-orange-100 shadow-lg p-6 rounded-lg">
     <h2 class="text-xs sm:text-md md:text-xl font-semibold">Edit data diri kamu</h2>
-    <form class="w-full mt-5" action="">
-      <ul class="space-y-5">
-        <li>
-          <input class="w-full bg-transparent outline-none border p-2 text-xs sm:text-md md:text-xl rounded-md"
-            type="text" value="Joan" placeholder="Masukkan nama">
-        </li>
-        <li>
-          <input class="w-full bg-transparent outline-none border p-2 text-xs sm:text-md md:text-xl rounded-md"
-            type="text" value="joanpurba@gmail.com" placeholder="Masukkan email">
-        </li>
-        <li>
-          <input class="w-full bg-transparent outline-none border p-2 text-xs sm:text-md md:text-xl rounded-md"
-            type="text" value="joan123" placeholder="Masukkan password">
-        </li>
-        <li>
-          <input class="w-full bg-transparent outline-none border p-2 text-xs sm:text-md md:text-xl rounded-md"
-            type="text" value="Jl. Laravel Blok 6 Jakarta Selatan" placeholder="Masukkan alamat">
-        </li>
-        <li class="flex gap-3">
-          <button
-            class="w-full bg-red-400 hover:bg-red-500 text-xs sm:text-sm md:text-lg font-medium md:font-bold text-orange-100 rounded-md py-2 md:py-3">Batal</button>
-          <button
-            class="w-full bg-blue-400 hover:bg-blue-500 text-xs sm:text-sm md:text-lg font-medium md:font-bold text-orange-100 rounded-md py-2 md:py-3">Edit</button>
-        </li>
-      </ul>
-    </form>
+    <ul class="w-full mt-5 space-y-5">
+      <li>
+        <input class="w-full bg-transparent outline-none border p-2 text-xs sm:text-md md:text-xl rounded-md"
+          type="text" value="Joan" placeholder="Masukkan nama">
+      </li>
+      <li>
+        <input class="w-full bg-transparent outline-none border p-2 text-xs sm:text-md md:text-xl rounded-md"
+          type="text" value="joanpurba@gmail.com" placeholder="Masukkan email">
+      </li>
+      <li>
+        <input class="w-full bg-transparent outline-none border p-2 text-xs sm:text-md md:text-xl rounded-md"
+          type="text" value="joan123" placeholder="Masukkan password">
+      </li>
+      <li>
+        <input class="w-full bg-transparent outline-none border p-2 text-xs sm:text-md md:text-xl rounded-md"
+          type="text" value="Jl. Laravel Blok 6 Jakarta Selatan" placeholder="Masukkan alamat">
+      </li>
+      <li class="flex gap-3">
+        <button id="closePopup"
+          class="w-full bg-red-400 hover:bg-red-500 text-xs sm:text-sm md:text-lg font-medium md:font-bold text-orange-100 rounded-md py-2 md:py-3">Batal</button>
+        <button id="closePopup"
+          class="w-full bg-blue-400 hover:bg-blue-500 text-xs sm:text-sm md:text-lg font-medium md:font-bold text-orange-100 rounded-md py-2 md:py-3">Edit</button>
+      </li>
+    </ul>
   </div>
 </div>
 <div id="hapusPopup" class="fixed z-20 inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden px-5">
   <div class="w-full md:w-[400px] bg-zinc-700 text-orange-100 shadow-lg p-6 rounded-lg">
     <h2 class="text-center text-xs sm:text-md md:text-xl font-semibold">Kamu yakin mau hapus?</h2>
-    <form class="w-full mt-20" action="">
-      <ul class="space-y-5">
-        <li class="flex gap-3">
-          <button
-            class="w-full bg-red-400 hover:bg-red-500 text-xs sm:text-sm md:text-lg font-medium md:font-bold text-orange-100 rounded-md py-2 md:py-3">Batal</button>
-          <button
-            class="w-full bg-blue-400 hover:bg-blue-500 text-xs sm:text-sm md:text-lg font-medium md:font-bold text-orange-100 rounded-md py-2 md:py-3">Yakin</button>
-        </li>
-      </ul>
-    </form>
+    <ul class="w-full mt-20 space-y-5">
+      <li class="flex gap-3">
+        <button id="closePopup"
+          class="w-full bg-red-400 hover:bg-red-500 text-xs sm:text-sm md:text-lg font-medium md:font-bold text-orange-100 rounded-md py-2 md:py-3">Batal</button>
+        <button id="closePopup"
+          class="w-full bg-blue-400 hover:bg-blue-500 text-xs sm:text-sm md:text-lg font-medium md:font-bold text-orange-100 rounded-md py-2 md:py-3">Yakin</button>
+      </li>
+    </ul>
   </div>
 </div>
 <script>
@@ -171,21 +167,37 @@
     profileSection.appendChild(div);
   });
 
-  document.querySelectorAll(".editBtn").forEach(button => {
-    button.addEventListener("click", () => {
-      editPopup.classList.remove("hidden");
-    });
-  });
+  document.addEventListener("DOMContentLoaded", function () {
+    const editBtn = document.querySelector(".editBtn");
+    const editPopup = document.getElementById("editPopup");
 
-  document.querySelectorAll(".hapusBtn").forEach(button => {
-    button.addEventListener("click", () => {
-      hapusPopup.classList.remove("hidden");
-    });
-  });
+    const hapusBtns = document.querySelectorAll(".hapusBtn");
+    const hapusPopup = document.getElementById("hapusPopup");
 
-  closePopup.addEventListener("click", () => {
-    editPopup.classList.add("hidden");
+    const closeButtons = document.querySelectorAll("#closePopup");
+
+    function closePopup() {
+      editPopup.classList.add("hidden");
+      hapusPopup.classList.add("hidden");
+    }
+
+    if (editBtn) {
+      editBtn.addEventListener("click", function () {
+        editPopup.classList.remove("hidden");
+      });
+    }
+
+    hapusBtns.forEach(btn => {
+      btn.addEventListener("click", function () {
+        hapusPopup.classList.remove("hidden");
+      });
+    });
+
+    closeButtons.forEach(button => {
+      button.addEventListener("click", closePopup);
+    });
   });
 </script>
+
 
 </html>
