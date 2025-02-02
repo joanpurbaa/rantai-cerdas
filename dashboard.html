@@ -7,6 +7,7 @@
   <title>Ketjeh Developer</title>
   <link rel="icon" href="images/logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="dist/hamburgers.css" rel="stylesheet">
 </head>
 <style>
   @font-face {
@@ -27,13 +28,69 @@
     -webkit-text-stroke: 1px #fff7ed;
     text-stroke: 1px #fff7ed;
   }
+
+  .line {
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    transition: .5s !important;
+  }
+
+  .line::after,
+  .line::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    border-radius: 100px;
+    transition: .5s !important;
+  }
+
+  .line::after {
+    content: "";
+    transform: translateY(-10px);
+  }
+
+  .line::before {
+    content: "";
+    transform: translateY(10px);
+  }
+
+  body.humburgerActive .line::after {
+    transform: rotate(-45deg);
+    transition: .5s !important;
+  }
+
+  body.humburgerActive .line {
+    background: transparent;
+    transition: .5s !important;
+  }
+
+  body.humburgerActive .line::before {
+    transform: rotate(45deg);
+    transition: .5s !important;
+  }
+
+  body.humburgerActive header {
+    align-items: start !important;
+  }
+
+  body.humburgerActive header nav {
+    display: block !important;
+  }
 </style>
 
 <body class="bg-black text-orange-100">
-  <header class="fixed z-10 w-full flex justify-between items-center text-orange-50 p-10 backdrop-blur-2xl">
-    <a class="text-3xl font-semibold" href="dashboard.html">Ketjeh Developer</a>
+  <header class="fixed z-10 w-full hidden md:flex justify-between items-center text-orange-50 p-10 backdrop-blur-2xl">
+    <a class="sm:text-xl xl:text-3xl font-semibold" href="dashboard.html">Ketjeh Developer</a>
+    <div class="hamburger">
+      <div class="hamburger-box">
+        <div class="hamburger-inner"></div>
+      </div>
+    </div>
     <nav>
-      <ul class="flex items-center gap-x-14 text-xl">
+      <ul class="flex items-center gap-x-14 text-md xl:text-xl">
         <li>
           <a href="beliPaket.html">Paket belajar</a>
         </li>
@@ -42,33 +99,57 @@
         </li>
         <li>
           <a href="profil.html">
-            <img class="w-12 rounded-full" src="images/profil.jpg" alt="">
+            <img class="w-10 xl:w-12 rounded-full" src="images/profil.jpg" alt="">
           </a>
         </li>
       </ul>
     </nav>
   </header>
-  <main class="py-36 px-10">
-    <section class="px-20">
-      <div class="flex justify-between">
-        <h1 class="text-2xl font-semibold">⏰ Jadwal kamu untuk minggu ini - Ruang D4</h1>
-        <div class="flex gap-x-10">
+  <header class="fixed z-10 w-full md:hidden block text-orange-50 p-5 sm:p-10 bg-zinc-900">
+    <section class="w-full flex justify-between items-center">
+      <a class="text-md sm:text-xl xl:text-3xl font-semibold" href="dashboard.html">Ketjeh Developer</a>
+      <div class="humburger p-0 d-flex justify-content-center align-items-center">
+        <div class="line rounded-5"></div>
+      </div>
+    </section>
+    <nav class="hidden md:block">
+      <ul class="mt-10 flex flex-col items-center gap-y-14 text-md xl:text-xl">
+        <li>
+          <a href="beliPaket.html">Paket belajar</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://chat.whatsapp.com/IbhgFpIKIowIREo6pOJMIQ">Gabung komunitas</a>
+        </li>
+        <li class="w-full flex justify-center bg-amber-500 rounded-full">
+          <a class="bg-amber-500 flex items-center gap-x-5 p-3" href="profil.html">
+            <img class="w-10 xl:w-12 rounded-full" src="images/profil.jpg" alt="">
+            <p class="text-zinc-800 font-semibold">Profil</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="py-24 sm:py-36 px-5 sm:px-10">
+    <section class="px-0 2xl:px-20">
+      <div class="flex flex-col xl:flex-row justify-between gap-y-5 xl:gap-y-0">
+        <h1 class="text-md sm:text-xl xl:text-2xl font-semibold">⏰ Jadwal kamu untuk minggu ini - Ruang D4</h1>
+        <div class="flex flex-col sm:flex-row gap-y-3 gap-x-10">
           <div class="flex items-center gap-x-2">
-            <div class="w-5 h-5 bg-red-500 rounded-full"></div>
-            <p>Sudah berlangsung</p>
+            <div class="w-3 h-3 xl:w-5 xl:h-5 bg-red-500 rounded-full"></div>
+            <p class="text-xs sm:text-sm xl:text-md">Sudah berlangsung</p>
           </div>
           <div class="flex items-center gap-x-2">
-            <div class="w-5 h-5 bg-amber-500 rounded-full"></div>
-            <p>Sedang berlangsung</p>
+            <div class="w-3 h-3 xl:w-5 xl:h-5 bg-amber-500 rounded-full"></div>
+            <p class="text-xs sm:text-sm xl:text-md">Sedang berlangsung</p>
           </div>
           <div class="flex items-center gap-x-2">
-            <div class="w-5 h-5 bg-blue-500 rounded-full"></div>
-            <p>Akan berlangsung</p>
+            <div class="w-3 h-3 xl:w-5 xl:h-5 bg-blue-500 rounded-full"></div>
+            <p class="text-xs sm:text-sm xl:text-md">Akan berlangsung</p>
           </div>
         </div>
       </div>
-      <div class="mt-10 grid gap-2 md:gap-4 grid-cols-[auto_1fr]">
-        <div class="timeline hidden md:grid">
+      <div class="mt-10 grid gap-2 md:gap-4 grid-cols-[auto_1fr] text-xs sm:font-md">
+        <div class="grid">
           <div class="spacer"></div>
           <div class="time-marker">1 PM</div>
           <div class="time-marker">2 PM</div>
@@ -78,33 +159,33 @@
           <div class="time-marker">6 PM</div>
         </div>
         <div id="days-container" class="days flex gap-2 overflow-x-auto whitespace-nowrap 
-        lg:grid lg:grid-cols-5">
+        lg:grid xl:grid-cols-5 sm:pt-8 sm:pb-4">
         </div>
       </div>
     </section>
     <hr class="my-10 border-zinc-700">
-    <section class="px-20">
-      <h1 class="text-2xl font-semibold">📑 Riwayat Quiz</h1>
-      <div class="mt-5 w-full flex items-center bg-orange-100 text-black font-semibold gap-x-5 rounded-md p-6">
-        <img class="w-14 h-14" src="images/icons/file-text.svg" alt="">
+    <section class="px-0 2xl:px-20">
+      <h1 class="text-md sm:text-xl xl:text-2xl font-semibold">📑 Riwayat Quiz</h1>
+      <div class="mt-5 w-full flex items-center bg-orange-100 text-black font-semibold gap-x-5 rounded-md p-3 md:p-6">
+        <img class="w-7 h-7 sm:w-10 sm:h-10 w-xl:w-14 w-xl:h-14" src="images/icons/file-text.svg" alt="">
         <div class="w-full flex justify-between items-center">
           <div class="space-y-1">
-            <p class="text-xl font-bold">Quiz | Teori : Pengenalan IT</p>
-            <p>Skor : 100</p>
+            <p class="text-xs sm:text-md xl:text-xl font-bold">Quiz | Teori : Pengenalan IT</p>
+            <p class="text-xs sm:text-md">Skor : 100</p>
           </div>
-          <img class="w-8 h-8" src="images/icons/check.svg" alt="">
+          <img class="w-5 md:w-8 h-5 md:h-8" src="images/icons/check.svg" alt="">
         </div>
       </div>
     </section>
     <hr class="my-10 border-zinc-700">
-    <section class="px-20">
-      <h1 class="text-2xl font-semibold">📦 Paket belajar</h1>
-      <div class="mt-5 w-full  grid grid-cols-12 gap-3">
-        <div class="col-span-3 bg-zinc-800 rounded-xl p-7">
-          <h3 class="text-2xl font-semibold">Fondasi Web Development</h3>
-          <p class="mt-2 text-lg font-normal flex-grow">Pelajari HTML, CSS, Tailwind, dan SEO untuk website responsif
+    <section class="px-0 2xl:px-20">
+      <h1 class="text-md sm:text-xl xl:text-2xl font-semibold">📦 Paket belajar</h1>
+      <div class="mt-5 w-full grid grid-cols-12 gap-3">
+        <div class="col-span-12 md:col-span-4 xl:col-span-3 bg-zinc-800 rounded-xl p-5 sm:p-7">
+          <h3 class="text-sm sm:text-2xl font-semibold">Fondasi Web Development</h3>
+          <p class="mt-2 text-xs sm:text-lg font-normal flex-grow">Pelajari HTML, CSS, Tailwind, dan SEO untuk website responsif
             dan terstruktur.</p>
-          <div class="mt-20 flex gap-3 flex-wrap">
+          <div class="mt-20 flex gap-3 flex-wrap text-xs sm:text-md">
             <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">HTML</p>
             <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">CSS</p>
             <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">Tailwind CSS</p>
@@ -114,7 +195,7 @@
       </div>
     </section>
   </main>
-  <footer class="grid grid-cols-12 text-orange-100 text-xl font-lighter p-10">
+  <footer class="grid grid-cols-12 text-orange-100 text-md sm:text-xl font-lighter p-5 sm:p-10">
     <div class="flex gap-x-3">
       <a class="hover:underline" target="_blank" href="https://instagram.com/joanorlandopurba">Instagram</a>
       <p>|</p>
@@ -122,60 +203,90 @@
     </div>
   </footer>
   <a target="_blank" href="https://api.whatsapp.com/send/?phone=6282275338090&text&type=phone_number&app_absent=0"
-    class="fixed bottom-10 right-10 bg-amber-500 rounded-full p-5">
-    <img class="w-7 h-7" src="images/icons/phone2.svg" alt="">
+    class="fixed bottom-10 right-10 bg-amber-400 rounded-full shadow-lg p-5">
+    <img class="w-5 h-5 md:w-7 md:h-7" src="images/icons/phone2.svg" alt="">
   </a>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
   const daysContainer = document.getElementById("days-container");
 
   const eventsData = [
     { date: "2024-02-05", title: "Pengenalan IT", time: "1 PM - 4 PM", color: "bg-red-500", startRow: 1, endRow: 7 },
     { date: "2024-02-05", title: "Quiz | Teori", time: "5 PM - 5:30 PM", color: "bg-red-500", startRow: 8, endRow: 9 },
-    { date: "2024-02-06", title: "Pengenalan Website", time: "1 PM - 4 PM", color: "bg-amber-500", startRow: 1, endRow: 7 },
-    { date: "2024-02-06", title: "Quiz | Teori", time: "5 PM - 5:30 PM", color: "bg-amber-500", startRow: 8, endRow: 9 },
-    { date: "2024-02-07", title: "Tag HTML", time: "1 PM - 4 PM", color: "bg-blue-500", startRow: 1, endRow: 7 },
-    { date: "2024-02-07", title: "Quiz | Praktek", time: "5 PM - 6 PM", color: "bg-blue-500", startRow: 8, endRow: 10 },
-    { date: "2024-02-08", title: "HTML: Table, Form", time: "1 PM - 4 PM", color: "bg-blue-500", startRow: 1, endRow: 7 },
-    { date: "2024-02-08", title: "Quiz | Praktek", time: "5 PM - 6 PM", color: "bg-blue-500", startRow: 8, endRow: 10 },
+    { date: "2024-02-06", title: "Pengenalan Website", time: "1 PM - 4 PM", color: "bg-red-500", startRow: 1, endRow: 7 },
+    { date: "2024-02-06", title: "Quiz | Teori", time: "5 PM - 5:30 PM", color: "bg-red-500", startRow: 8, endRow: 9 },
+    { date: "2024-02-07", title: "Tag HTML", time: "1 PM - 4 PM", color: "bg-red-500", startRow: 1, endRow: 7 },
+    { date: "2024-02-07", title: "Quiz | Praktek", time: "5 PM - 6 PM", color: "bg-red-500", startRow: 8, endRow: 10 },
+    { date: "2024-02-08", title: "HTML: Table, Form", time: "1 PM - 4 PM", color: "bg-amber-500", startRow: 1, endRow: 7 },
+    { date: "2024-02-08", title: "Quiz | Praktek", time: "5 PM - 6 PM", color: "bg-amber-500", startRow: 8, endRow: 10 },
     { date: "2024-02-09", title: "Pengenalan CSS", time: "1 PM - 4 PM", color: "bg-blue-500", startRow: 1, endRow: 7 },
     { date: "2024-02-09", title: "Quiz | Teori", time: "5 PM - 5:30 PM", color: "bg-blue-500", startRow: 8, endRow: 9 },
   ];
 
-  let startDate = new Date("2024-02-05");
+  function formatDate(dateString) {
+    const options = { day: "numeric", month: "short" };
+    return new Date(dateString).toLocaleDateString("id-ID", options);
+  }
 
-  for (let i = 0; i < 5; i++) {
-    let currentDate = new Date(startDate);
-    currentDate.setDate(startDate.getDate() + i);
+  function renderSchedule() {
+    daysContainer.innerHTML = "";
 
-    let dayNumber = currentDate.getDate();
-    let month = currentDate.toLocaleString("default", { month: "short" });
+    const isXlScreen = window.matchMedia("(min-width: 1280px)").matches;
+    const today = "2024-02-08";
 
-    let dateString = currentDate.toISOString().split("T")[0];
+    let startDate = new Date("2024-02-05");
 
-    let eventsForThisDay = eventsData.filter(event => event.date === dateString);
+    for (let i = 0; i < 5; i++) {
+      let currentDate = new Date(startDate);
+      currentDate.setDate(startDate.getDate() + i);
 
-    let dayElement = document.createElement("div");
-    dayElement.className = "p-2 bg-zinc-800 rounded-md min-w-[90vw] sm:min-w-[90vw] md:min-w-[90vw] lg:min-w-0";
+      let dateString = currentDate.toISOString().split("T")[0];
 
-    let eventsHTML = eventsForThisDay.map(event => `
-      <div class="${event.color} rounded-md px-2 py-1 col-span-1 row-start-${event.startRow} row-end-${event.endRow}">
-          <p class="font-semibold">${event.title}</p>
-          <p class="text-sm">${event.time}</p>
+      if (!isXlScreen && dateString !== today) continue;
+
+      let eventsForThisDay = eventsData.filter(event => event.date === dateString);
+
+      let dayElement = document.createElement("div");
+      dayElement.className = "p-2 bg-zinc-800 rounded-md min-w-full lg:min-w-0";
+
+      let eventsHTML = eventsForThisDay.map(event => `
+      <div class="${event.color} rounded-md px-2 py-1 col-span-1 row-start-${event.startRow} row-end-${event.endRow} text-sm sm:text-base font-bold">
+        <p class="font-semibold">${event.title}</p>
+        <p>${event.time}</p>
       </div>
     `).join("");
 
-    dayElement.innerHTML = `
+      dayElement.innerHTML = `
       <div class="date flex items-center gap-2">
-          <p class="text-2xl font-bold">${dayNumber + " " + month}</p>
+        <p class="text-sm sm:text-xl xl:text-2xl font-bold">${formatDate(dateString)}</p>
       </div>
       <div class="events grid" style="grid-template-rows: repeat(10, 50px);">
-          ${eventsHTML || `<p class="text-gray-400">No events</p>`}
+        ${eventsHTML || `<p class="text-gray-400">No events</p>`}
       </div>
     `;
 
-    daysContainer.appendChild(dayElement);
+      daysContainer.appendChild(dayElement);
+    }
   }
+
+  window.addEventListener("resize", renderSchedule);
+  renderSchedule();
+
+  $(window).ready(function () {
+    $(window).on("scroll", function () {
+      if ($(window).scrollTop() > 50) {
+        $(".largeSizeHeader").addClass("scrollActive");
+        $(".largeSizeHeader").addClass("shadow");
+      } else {
+        $(".largeSizeHeader").removeClass("scrollActive");
+        $(".largeSizeHeader").removeClass("shadow");
+      }
+    });
+    $(".humburger").on("click", function () {
+      $("body").toggleClass("humburgerActive")
+    })
+  });
 </script>
 
 </html>
