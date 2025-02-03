@@ -22,6 +22,7 @@
 
   * {
     letter-spacing: 1px;
+    scroll-behavior: smooth;
   }
 
   .text-stroke {
@@ -53,21 +54,77 @@
     animation-timeline: view();
     animation-range: entry 0% cover 20%;
   }
+
+  .line {
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    transition: .5s !important;
+  }
+
+  .line::after,
+  .line::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    border-radius: 100px;
+    transition: .5s !important;
+  }
+
+  .line::after {
+    content: "";
+    transform: translateY(-10px);
+  }
+
+  .line::before {
+    content: "";
+    transform: translateY(10px);
+  }
+
+  body.humburgerActive .line::after {
+    transform: rotate(-45deg);
+    transition: .5s !important;
+  }
+
+  body.humburgerActive .line {
+    background: transparent;
+    transition: .5s !important;
+  }
+
+  body.humburgerActive .line::before {
+    transform: rotate(45deg);
+    transition: .5s !important;
+  }
+
+  body.humburgerActive header {
+    align-items: start !important;
+  }
+
+  body.humburgerActive header nav {
+    display: block !important;
+  }
 </style>
 
 <body class="bg-black">
-  <header class="fixed z-10 w-full flex justify-between items-center text-orange-50 p-10 backdrop-blur-2xl">
-    <h2 class="text-3xl font-semibold">Ketjeh Developer</h2>
+  <header class="fixed z-10 w-full hidden md:flex justify-between items-center text-orange-50 p-10 backdrop-blur-2xl">
+    <a class="sm:text-xl xl:text-3xl font-semibold" href="index.html">Ketjeh Developer</a>
+    <div class="hamburger">
+      <div class="hamburger-box">
+        <div class="hamburger-inner"></div>
+      </div>
+    </div>
     <nav>
-      <ul class="flex items-center gap-x-14 text-xl">
+      <ul class="flex items-center gap-x-14 text-md xl:text-xl">
         <li>
-          <a href="">Materi</a>
+          <a href="#materi">Materi</a>
         </li>
         <li>
-          <a href="">Target</a>
+          <a href="#target">Target</a>
         </li>
         <li>
-          <a href="">FAQ</a>
+          <a href="#faq">FAQ</a>
         </li>
         <li>
           <a target="_blank"
@@ -80,108 +137,166 @@
       </ul>
     </nav>
   </header>
+  <header class="fixed z-10 w-full md:hidden block text-orange-50 p-5 sm:p-10 bg-zinc-900 shadow-lg">
+    <section class="w-full flex justify-between items-center">
+      <a class="text-md sm:text-xl xl:text-3xl font-semibold" href="dashboard.html">Ketjeh Developer</a>
+      <div class="humburger p-0 d-flex justify-content-center align-items-center">
+        <div class="line rounded-5"></div>
+      </div>
+    </section>
+    <nav class="hidden md:block">
+      <ul class="mt-10 flex flex-col items-center gap-y-14 text-sm sm:text-md xl:text-xl">
+        <li>
+          <a href="#materi">Materi</a>
+        </li>
+        <li>
+          <a href="#target">Target</a>
+        </li>
+        <li>
+          <a href="#faq">FAQ</a>
+        </li>
+        <li class="w-full flex justify-center bg-amber-500 rounded-full">
+          <a class="bg-amber-500 flex items-center gap-x-5 p-3" href="profil.html">
+            <img class="w-8 sm:w-10 xl:w-12 rounded-full" src="images/icons/phone2.svg" alt="">
+            <p class="text-white font-bold">Hubungi</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
   <main class="text-orange-50">
-    <section class="grid grid-cols-12 pt-64">
-      <h1 class="col-start-2 col-span-6 text-7xl text-transparent font-black"><span class="text-stroke italic">SIAP
+    <section class="grid grid-cols-12 pt-28 sm:pt-40 lg:pt-64 px-5 sm:px-10 2xl:px-0">
+      <h1
+        class="2xl:col-start-2 col-span-12 md:col-span-6 text-3xl sm:text-5xl 2xl:text-7xl text-transparent font-black">
+        <span class="text-stroke italic">SIAP
           MENJADI</span><br><span class="text-orange-50">WEBSITE DEVELOPER</span><br><span
-          class="text-stroke italic">YANG KECE?</span></h1>
-      <div class="col-start-8 col-span-4 flex flex-col justify-between items-start">
-        <p class="text-xl font-light">Telah membantu lebih dari <span class="font-semibold">1.000 individu</span> meraih
+          class="text-stroke italic">YANG KECE?</span>
+      </h1>
+      <div
+        class="mt-10 md:mt-0 md:col-start-8 col-span-12 md:col-span-5 2xl:col-span-4 flex flex-col justify-between items-start">
+        <p class="text-sm sm:text-xl font-light">Telah membantu lebih dari <span class="font-semibold">1.000
+            individu</span> meraih
           impian menjadi <span class="font-semibold">web developer</span> andal, membangun karier gemilang di perusahaan
           impian mereka.</p>
-        <a class="bg-amber-400 hover:bg-amber-500 inline-flex items-center gap-x-3 text-2xl text-zinc-800 font-bold py-5 px-9 rounded-full"
+        <a class="mt-10 bg-amber-400 hover:bg-amber-500 inline-flex items-center gap-x-3 text-sm sm:text-lg 2xl:text-2xl text-zinc-800 font-bold py-2 px-5 sm:py-5 sm:px-9 rounded-full"
           href="register.html">Daftar <img class="w-6 h-6" src="images/icons/arrow-right.svg" alt=""></a>
       </div>
     </section>
     <video class="col-span-12 w-full" autoplay loop muted>
       <source src="videos/video1.mp4" type="video/mp4">
     </video>
-    <section class="block background h-screen flex flex-col justify-center items-center text-center px-[500px]">
-      <h1 class="text-7xl font-black"><span class="text-stroke text-transparent italic">JADI JAGOAN
+    <section
+      class="block background h-[500px] sm:h-screen flex flex-col justify-center items-center text-center px-[30px] md:px-[200px] xl:px-[500px]">
+      <h1 class="text-3xl sm:text-5xl 2xl:text-7xl font-black"><span class="text-stroke text-transparent italic">JADI
+          JAGOAN
           DALAM</span><br><span class="text-orange-100">4 BULAN</span></h1>
-      <p class="text-2xl mt-12">Ga cuma mimpi, bikin coding jadi hobi! Dalam <span class="font-bold">4 bulan</span>,
+      <p class="text-sm sm:text-xl xl:text-2xl mt-12">Ga cuma mimpi, bikin coding jadi hobi! Dalam <span
+          class="font-bold">4
+          bulan</span>,
         kamu bakal jadi developer kece yang siap bikin project keren. <br> Are you ready to glow up?</p>
     </section>
-    <section class="block grid grid-cols-12 py-32">
-      <div class="col-start-2 col-span-2 space-y-20">
-        <h1 class="text-7xl font-black italic"><span class="text-stroke text-black">YANG
+    <section id="materi" class="block grid grid-cols-12 py-32 px-5 sm:px-10 2xl:px-0">
+      <div
+        class="col-start-1 xl:col-start-2 col-span-12 lg:col-span-3 flex flex-row lg:flex-col justify-between lg:justify-start items-end lg:items-start space-y-20">
+        <h1 class="text-3xl md:text-5xl lg:text-7xl font-black italic"><span class="text-stroke text-black">YANG
             AKAN</span><br><span>KAMU KUASAI!</span></h1>
-        <a class="bg-amber-400 hover:bg-amber-500 inline-flex items-center gap-x-3 text-2xl text-zinc-800 font-bold py-5 px-9 rounded-full"
+        <a class="bg-amber-400 hover:bg-amber-500 inline-flex items-center gap-x-3 text-sm sm:text-lg 2xl:text-2xl text-zinc-800 font-bold py-3 md:py-5 pl-5 pr-8 md:px-9 rounded-full"
           href="register.html">Daftar <img class="fill-orange-50 w-6 h-6" src="images/icons/arrow-right.svg" alt=""></a>
       </div>
-      <div id="cardWrapper" class="col-start-5 col-span-7 grid grid-cols-4 gap-2"></div>
+      <div id="cardWrapper"
+        class="lg:col-start-5 col-span-12 lg:col-span-8 xl:col-span-7 grid grid-cols-12 gap-2 mt-10 lg:mt-0"></div>
     </section>
-    <section class="block grid grid-cols-12 text-orange-100 py-32">
-      <div class="col-start-2 col-span-12 space-y-20">
-        <h1 class="text-7xl font-black italic"><span class="text-stroke text-black">TARGET</span><br><span>KAMU!</span>
+    <section id="target" class="grid grid-cols-12 text-orange-100 py-32 px-5 sm:px-10 2xl:px-0">
+      <div class="xl:col-start-2 col-span-12 space-y-20">
+        <h1 class="text-3xl md:text-5xl lg:text-7xl font-black italic"><span
+            class="text-stroke text-black">TARGET</span><br><span>KAMU!</span>
         </h1>
       </div>
-      <div class="col-start-2 col-end-12 grid grid-cols-12 gap-20 mt-10">
-        <div class="col-span-7 space-y-7 flex items-end">
+      <div
+        class="col-start-1 xl:col-start-2 col-end-13 xl:col-end-12 md:grid grid-cols-12 gap-20 mt-10 space-y-10 md:space-y-0">
+        <div class="md:col-span-9 lg:col-span-7 space-y-7 flex items-end">
           <div class="space-y-7">
-            <h1 class="text-3xl font-bold">Website profil yang kece & responsif</h1>
+            <h1 class="text-xs sm:text-base md:text-xl xl:text-3xl font-bold">Website profil yang kece & responsif</h1>
             <video class="w-full h-auto" autoplay loop muted>
               <source src="videos/video2.mp4" type="video/mp4">
             </video>
-            <p class="text-lg">Website profil pribadi yang responsif dan profesional menggunakan HTML, CSS, atau
+            <p class="text-xs sm:text-base xl:text-lg">Website profil pribadi yang responsif dan profesional menggunakan
+              HTML, CSS,
+              atau
               Tailwind CSS. Optimalkan dengan SEO untuk meningkatkan visibilitas di mesin pencari.</p>
           </div>
         </div>
-        <div class="col-span-5 space-y-7">
-          <h1 class="text-3xl font-bold">Dashboard cuaca Real-time</h1>
-          <img loading="lazy" src="images/real-time-weather-app.jpg" alt="">
-          <p class="text-lg">Fetch API dari OpenWeatherMap dan gunakan GSAP untuk membuat
+        <div class="col-span-7 lg:col-span-5 space-y-7">
+          <h1 class="text-xs sm:text-xl xl:text-3xl font-bold">Dashboard cuaca Real-time</h1>
+          <img class="w-full" loading="lazy" src="images/real-time-weather-app.jpg" alt="">
+          <p class="text-xs sm:text-base xl:text-lg">Fetch API dari OpenWeatherMap dan gunakan GSAP untuk membuat
             platform Dashboard cuaca dengan animasi yang menarik.
           </p>
         </div>
-        <div class="col-span-4 space-y-7">
-          <h1 class="text-3xl font-bold">Platform manajemen tugas</h1>
+        <div class="col-span-7 lg:col-span-5 lg:col-span-4 space-y-7">
+          <h1 class="text-xs sm:text-xl xl:text-3xl font-bold">Platform manajemen tugas</h1>
           <video class="w-full" autoplay loop muted>
             <source src="videos/video3.mp4" type="video/mp4">
           </video>
-          <p class="text-lg">Kelola tugas dengan mudah, dengan Next.js, serta autentikasi NextAuth, dideploy ke Vercel
+          <p class="text-xs sm:text-base xl:text-lg">Kelola tugas dengan mudah, dengan Next.js, serta autentikasi
+            NextAuth,
+            dideploy ke Vercel
             lewat CI/CD.</p>
         </div>
-        <div class="col-span-6 space-y-7">
-          <h1 class="text-3xl font-bold">Blog modern</h1>
-          <img loading="lazy" src="images/blog.jpg" alt="">
-          <p class="text-lg">Platform blog modern dengan Next.js dan autentikasi NextAuth, kelola proyek dengan Git dan
+        <div class="col-span-9 lg:col-span-7 lg:col-span-6 space-y-7">
+          <h1 class="text-xs sm:text-xl xl:text-3xl font-bold">Blog modern</h1>
+          <img class="w-full" loading="lazy" src="images/blog.jpg" alt="">
+          <p class="text-xs sm:text-base xl:text-lg">Platform blog modern dengan Next.js dan autentikasi NextAuth,
+            kelola proyek
+            dengan Git dan
             GitHub, lalu deploy otomatis ke Vercel menggunakan pipeline CI/CD.</p>
         </div>
       </div>
     </section>
-    <section class="block grid grid-cols-12 text-orang-100 py-32">
-      <div class="col-start-2 col-span-12 space-y-20">
-        <h1 class="text-7xl font-black"><span class="text-stroke text-black italic">HANYA BUTUH </span><span>4
+    <section class="block grid grid-cols-12 text-orang-100 py-32 px-5 sm:px-10 2xl:px-0">
+      <div class="xl:col-start-2 col-span-12 space-y-20">
+        <h1 class="text-3xl md:text-5xl xl:text-7xl font-black"><span class="text-stroke text-black italic">HANYA BUTUH
+          </span><span>4
             BULAN</span><br><span>UNTUK KAMU!</span></h1>
       </div>
-      <div id="judulWrapper" class="mt-32 col-start-2 col-end-12 grid grid-cols-4 gap-7"></div>
-      <div id="barWrapper" class="col-start-2 col-end-12 grid grid-cols-4 gap-7"></div>
-      <div id="descWrapper" class="col-start-2 col-end-12 grid grid-cols-4 gap-7"></div>
+      <div id="judulWrapper"
+        class="mt-10 md:mt-32 col-start-1 xl:col-start-2 col-end-13 xl:col-end-12 flex flex-col xl:grid grid-cols-4 gap-7">
+      </div>
+      <div id="barWrapper" class="col-start-1 xl:col-start-2 col-end-13 xl:col-end-12 hidden xl:grid grid-cols-4 gap-7">
+      </div>
+      <div id="descWrapper"
+        class="col-start-1 xl:col-start-2 col-end-13 xl:col-end-12 hidden xl:grid grid-cols-4 gap-7"></div>
     </section>
-    <section class="block grid grid-cols-12 text-orange-100 py-32">
-      <div class="col-start-2 col-span-4 space-y-20">
-        <h1 class="text-7xl font-black italic"><span class="text-stroke text-black">PILIH <span>PAKET</span><br>
+    <section class="block grid grid-cols-12 text-orange-100 py-32 px-5 sm:px-10 2xl:px-0">
+      <div
+        class="xl:col-start-2 col-span-12 lg:col-span-4 flex lg:flex-col items-end lg:items-start justify-between lg:justify-start space-y-20">
+        <h1 class="text-3xl md:text-5xl xl:text-7xl font-black italic"><span class="text-stroke text-black">PILIH
+            <span>PAKET</span><br>
             YANG</span><span> SESUAI!</span></h1>
-        <h2 class="text-2xl">Temukan paket belajar yang sesuai dengan kebutuhanmu. Mulai dari dasar hingga tingkat
+        <h2 class="hidden lg:block text-xl xl:text-2xl">Temukan paket belajar yang sesuai dengan kebutuhanmu. Mulai dari
+          dasar hingga
+          tingkat
           lanjut, kami siap membimbingmu
           menjadi Web Developer profesional.</h2>
-        <a class="bg-amber-400 hover:bg-amber-500 inline-flex items-center gap-x-3 text-2xl text-zinc-800 font-bold py-5 px-9 rounded-full"
+        <a class="bg-amber-400 hover:bg-amber-500 inline-flex items-center gap-x-3 text-sm sm:text-xl xl:text-2xl text-zinc-800 font-bold py-3 md:py-5 pl-5 pr-8 md:px-9 rounded-full"
           href="register.html">Daftar <img class="fill-orange-50 w-6 h-6" src="images/icons/arrow-right.svg" alt=""></a>
       </div>
-      <div id="kelasWrapper" class="col-start-6 col-span-6 grid grid-cols-12 gap-7"></div>
+      <div id="kelasWrapper"
+        class="mt-10 lg:mt-0 lg:col-start-6 col-span-12 lg:col-span-8 xl:col-span-6 grid grid-cols-12 gap-7"></div>
     </section>
-    <section class="block grid grid-cols-12 text-orange-100 py-32">
-      <div class="col-start-2 col-span-2 space-y-20">
-        <h1 class="text-8xl font-black">FREQUENTLY <span class="text-stroke text-black">ASKED</span> QUESTIONS</h1>
+    <section id="faq" class="block grid grid-cols-12 text-orange-100 py-32 px-5 sm:px-10 2xl:px-0">
+      <div class="xl:col-start-2 col-span-12 lg:col-span-2 space-y-20">
+        <h1 class="text-3xl md:text-5xl lg:text-6xl xl:text-8xl text-center md:text-start font-black">FREQUENTLY <span
+            class="text-stroke text-black">ASKED</span>
+          QUESTIONS</h1>
       </div>
-      <div class="mt-32 col-start-2 col-end-12">
+      <div class="mt-10 md:mt-32 col-start-1 xl:col-start-2 col-end-13 xl:col-end-12">
         <ul id="faqList"></ul>
       </div>
     </section>
   </main>
-  <footer class="grid grid-cols-12 text-orange-100 text-xl font-lighter pb-14">
-    <section class="col-start-2 col-end-12">
+  <footer class="grid grid-cols-12 text-orange-100 text-base lg:text-xl font-lighter pb-14 px-5 sm:px-10 2xl:px-0">
+    <section class="col-start-1 xl:col-start-2 col-end-13 xl:col-end-12">
       <div class="flex gap-x-3">
         <a class="hover:underline" target="_blank" href="https://instagram.com/joanorlandopurba">Instagram</a>
         <p>|</p>
@@ -189,6 +304,7 @@
       </div>
     </section>
   </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script>
     const data = {
       materi: [
@@ -305,13 +421,13 @@
 
     data.materi.forEach(item => {
       const card = document.createElement("div");
-      card.classList.add("col-span-2", "bg-zinc-900", "text-orange-50", "rounded-[50px]", "px-14", "py-8", "flex", "flex-col");
+      card.classList.add("col-span-12", "md:col-span-6", "bg-zinc-900", "text-orange-50", "rounded-lg", "md:rounded-[50px]", "p-5", "md:px-10", "xl:px-14", "md:py-5", "xl:py-8", "flex", "flex-col");
 
       card.innerHTML = `
-    <h3 class="text-2xl font-semibold mt-4">${item.title}</h3>
-    <p class="mt-2 text-lg font-normal flex-grow">${item.description}</p>
+    <h3 class="text-sm sm:text-2xl font-semibold">${item.title}</h3>
+    <p class="mt-2 text-xs sm:text-lg font-normal flex-grow">${item.description}</p>
     <div class="mt-20 flex gap-3 flex-wrap">
-      ${item.techs.map(tech => `<p class="bg-zinc-800 hover:bg-amber-500 py-2 px-3 rounded-md">${tech}</p>`).join('')}
+      ${item.techs.map(tech => `<p class="bg-zinc-800 hover:bg-amber-500 py-2 px-3 rounded-md text-xs sm:text-base">${tech}</p>`).join('')}
     </div>
   `;
 
@@ -320,22 +436,23 @@
 
     data.alurBelajar.forEach(item => {
       judulWrapper.innerHTML += `
-    <div class="shadow-lg rounded-lg">
-      <h2 class="text-xl">${item.bulan}</h2>
-      <h1 class="mt-2 text-3xl font-bold">${item.title}</h1>
+    <div class="col-span-1 bg-zinc-800 xl:bg-transparent p-5 xl:p-0 rounded-lg">
+      <h2 class="text-xs sm:text-lg md:text-xl"><span class="inline-block xl:hidden">⭐</span>${item.bulan}</h2>
+      <h1 class="mt-2 text-sm sm:text-xl md:text-3xl font-bold">${item.title}</h1>
+      <p class="block xl:hidden mt-3 text-xs sm:text-base md:text-lg">${item.description}</p>
     </div>
   `;
 
       barWrapper.innerHTML += `
-    <div class="flex items-center gap-3 py-10 justify-center">
+    <div class="col-span-1 hidden xl:flex items-center gap-3 py-10 justify-center">
       <p>⭐</p>
       <div class="h-2 w-full bg-amber-300 rounded-full"></div>
     </div>
   `;
 
       descWrapper.innerHTML += `
-    <div class="shadow-lg rounded-lg">
-      <p class="text-lg">${item.description}</p>
+    <div class="col-span-1 shadow-lg rounded-lg">
+      <p class="text-base xl:text-lg">${item.description}</p>
     </div>
   `;
     });
@@ -343,20 +460,20 @@
     const kelasWrapper = document.getElementById("kelasWrapper");
     data.kelas.forEach(kelas => {
       kelasWrapper.innerHTML += `
-    <div class="col-span-6 h-[280px] flex flex-col justify-between bg-zinc-900 rounded-3xl p-8">
+    <div class="col-span-12 md:col-span-6 md:h-[280px] flex flex-col justify-between bg-zinc-900 rounded-lg md:rounded-3xl p-5 xl:p-8">
       <div>
-        <h2 class="text-2xl font-bold text-amber-400">${kelas.title}</h2>
-        <p class="mt-3 text-lg">${kelas.description}</p>
+        <h2 class="text-sm sm:text-xl xl:text-2xl font-bold text-amber-400">${kelas.title}</h2>
+        <p class="mt-3 text-xs sm:text-base xl:text-lg">${kelas.description}</p>
       </div>
-      <div class="w-full h-[0.1px] bg-zinc-700 rounded-full"></div>
+      <hr class="my-5 md:my-0 w-full h-[0.1px] border-zinc-700 rounded-full"></hr>
       <div class="space-y-2">
         <div class="flex justify-between">
-          <h3>Estimasi</h3>
-          <p class="text-amber-400">${kelas.duration}</p>
+          <h3 class="text-xs sm:text-base">Estimasi</h3>
+          <p class="text-amber-400 text-xs sm:text-base">${kelas.duration}</p>
         </div>
         <div class="flex justify-between">
-          <h3>Harga</h3>
-          <p class="text-amber-400">${kelas.price}</p>
+          <h3 class="text-xs sm:text-base">Harga</h3>
+          <p class="text-amber-400 text-xs sm:text-base">${kelas.price}</p>
         </div>
       </div>
     </div>
@@ -368,11 +485,11 @@
       faqItem.classList.add("border-orange-100", "border-y", "p-5", "faq-item");
 
       faqItem.innerHTML = `
-    <div class="flex items-center justify-between gap-4 py-4">
-      <h2 class="text-4xl font-medium flex-1">${item.question}</h2>
-      <img class="w-14 h-14 chevron-icon transition-transform duration-300 cursor-pointer" src="images/icons/chevron-down.svg" alt="Chevron Icon">
+    <div class="flex items-center justify-between gap-4 sm:py-2 md:py-4">
+      <h2 class="text-xs sm:text-base md:text-xl lg:text-2xl xl:text-4xl font-medium flex-1">${item.question}</h2>
+      <img class="w-5 sm:w-10 xl:w-14 h-5 sm:h-10 xl:h-14 chevron-icon transition-transform duration-300 cursor-pointer" src="images/icons/chevron-down.svg" alt="Chevron Icon">
     </div>
-    <p class="text-2xl answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">${item.answer}</p>
+    <p class="mt-5 sm:mt-0 text-xs sm:text-sm md:text-base lg:text-xl xl:text-2xl answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">${item.answer}</p>
   `;
 
       faqList.appendChild(faqItem);
@@ -402,6 +519,21 @@
 
       question.addEventListener("click", toggleFAQ);
       chevronIcon.addEventListener("click", toggleFAQ);
+    });
+
+    $(window).ready(function () {
+      $(window).on("scroll", function () {
+        if ($(window).scrollTop() > 50) {
+          $(".largeSizeHeader").addClass("scrollActive");
+          $(".largeSizeHeader").addClass("shadow");
+        } else {
+          $(".largeSizeHeader").removeClass("scrollActive");
+          $(".largeSizeHeader").removeClass("shadow");
+        }
+      });
+      $(".humburger").on("click", function () {
+        $("body").toggleClass("humburgerActive")
+      })
     });
   </script>
 </body>
