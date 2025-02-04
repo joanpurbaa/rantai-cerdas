@@ -145,7 +145,7 @@
     <section class="px-0 xl:px-20">
       <h1 class="text-md sm:text-xl xl:text-2xl font-semibold">📦 Paket belajar kamu</h1>
       <div class="mt-5 w-full  grid grid-cols-12 gap-3">
-        <div class="col-span-12 md:col-span-6 lg:col-span-4 2xl:col-span-3 bg-zinc-800 rounded-xl p-5 sm:p-7">
+        <div class="col-span-12 md:col-span-6 lg:col-span-4 2xl:col-span-3 flex flex-col bg-zinc-800 rounded-xl p-5 sm:p-7">
           <h3 class="text-sm sm:text-2xl font-semibold">Fondasi Web Development</h3>
           <p class="mt-2 text-xs sm:text-lg font-normal flex-grow">Pelajari HTML, CSS, Tailwind, dan SEO untuk website
             responsif
@@ -157,6 +157,10 @@
             <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">Tailwind CSS</p>
             <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">SEO Dasar</p>
           </div>
+          <a href="detailPaket.html"
+            class="mt-5 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-sm sm:text-lg font-bold text-zinc-800 text-center py-2 rounded-md">
+            Lihat
+          </a>
         </div>
       </div>
     </section>
@@ -213,7 +217,7 @@
     </div>
   </div>
 </div>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
   const materi = [
     {
@@ -266,6 +270,21 @@
       popup.classList.add("hidden");
     });
   });
+
+  $(window).ready(function () {
+    $(window).on("scroll", function () {
+      if ($(window).scrollTop() > 50) {
+        $(".largeSizeHeader").addClass("scrollActive");
+        $(".largeSizeHeader").addClass("shadow");
+      } else {
+        $(".largeSizeHeader").removeClass("scrollActive");
+        $(".largeSizeHeader").removeClass("shadow");
+      }
+    });
+    $(".humburger").on("click", function () {
+      $("body").toggleClass("humburgerActive")
+    })
+  }); 
 </script>
 
 </html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ketjeh Developer</title>
+  <link rel="icon" href="images/logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+  @font-face {
+    font-family: "Montreux Jazz Soft Regular";
+    src: url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.eot");
+    src: url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.eot?#iefix")format("embedded-opentype"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.woff2")format("woff2"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.woff")format("woff"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.ttf")format("truetype"),
+      url("https://db.onlinewebfonts.com/t/69396bc9baff21b454f07291d46c6859.svg#Montreux Jazz Soft Regular")format("svg");
+  }
+
+  * {
+    letter-spacing: 1px;
+  }
+
+  .line {
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    transition: .5s !important;
+  }
+
+  .line::after,
+  .line::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    border-radius: 100px;
+    transition: .5s !important;
+  }
+
+  .line::after {
+    content: "";
+    transform: translateY(-10px);
+  }
+
+  .line::before {
+    content: "";
+    transform: translateY(10px);
+  }
+
+  body.humburgerActive .line::after {
+    transform: rotate(-45deg);
+    transition: .5s !important;
+  }
+
+  body.humburgerActive .line {
+    background: transparent;
+    transition: .5s !important;
+  }
+
+  body.humburgerActive .line::before {
+    transform: rotate(45deg);
+    transition: .5s !important;
+  }
+
+  body.humburgerActive header {
+    align-items: start !important;
+  }
+
+  body.humburgerActive header nav {
+    display: block !important;
+  }
+</style>
+
+<body class="bg-black text-orange-100">
+  <header class="fixed z-10 w-full hidden md:flex justify-between items-center text-orange-50 p-10 backdrop-blur-2xl">
+    <a class="sm:text-xl xl:text-3xl font-semibold" href="dashboard.html">Ketjeh Developer</a>
+    <div class="hamburger">
+      <div class="hamburger-box">
+        <div class="hamburger-inner"></div>
+      </div>
+    </div>
+    <nav>
+      <ul class="flex items-center gap-x-14 text-md xl:text-xl">
+        <li>
+          <a href="beliPaket.html">Paket belajar</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://chat.whatsapp.com/IbhgFpIKIowIREo6pOJMIQ">Gabung komunitas</a>
+        </li>
+        <li>
+          <a href="profil.html">
+            <img class="w-10 xl:w-12 rounded-full" src="images/profil.jpg" alt="">
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <header class="fixed z-10 w-full md:hidden block text-orange-50 p-5 sm:p-10 bg-zinc-900">
+    <section class="w-full flex justify-between items-center">
+      <a class="text-md sm:text-xl xl:text-3xl font-semibold" href="dashboard.html">Ketjeh Developer</a>
+      <div class="humburger p-0 d-flex justify-content-center align-items-center">
+        <div class="line rounded-5"></div>
+      </div>
+    </section>
+    <nav class="hidden md:block">
+      <ul class="mt-10 flex flex-col items-center gap-y-14 text-md xl:text-xl">
+        <li>
+          <a href="beliPaket.html">Paket belajar</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://chat.whatsapp.com/IbhgFpIKIowIREo6pOJMIQ">Gabung komunitas</a>
+        </li>
+        <li class="w-full flex justify-center bg-amber-500 rounded-full">
+          <a class="bg-amber-500 flex items-center gap-x-5 p-3" href="profil.html">
+            <img class="w-10 xl:w-12 rounded-full" src="images/profil.jpg" alt="">
+            <p class="text-zinc-800 font-semibold">Profil</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="py-24 sm:py-36 px-5 sm:px-10">
+    <section class="px-5 md:px-10 lg:px-20 space-y-6">
+      <h1 class="text-3xl font-extrabold text-center text-gray-800 dark:text-white">Pengenalan IT</h1>
+
+      <div class="text-lg space-y-4 text-gray-700 dark:text-gray-300">
+        <h2 class="text-xl font-semibold text-blue-600 dark:text-blue-400">Apa itu IT?</h2>
+        <p>IT (Information Technology) atau Teknologi Informasi adalah dunia yang mengelola teknologi untuk memproses,
+          menyimpan, dan mengirim informasi. Ini mencakup banyak hal seperti aplikasi, jaringan internet, cloud storage,
+          bahkan AI!</p>
+        <p>Di era digital, IT sudah menjadi bagian penting dari hampir semua industri, mulai dari bisnis, kesehatan,
+          pendidikan, hingga hiburan.</p>
+      </div>
+
+      <div class="text-lg space-y-4 text-gray-700 dark:text-gray-300">
+        <h2 class="text-xl font-semibold text-blue-600 dark:text-blue-400">Kenapa Harus Belajar IT?</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><span class="font-semibold">Peluang Karier Luas:</span> Hampir semua industri butuh tenaga IT.</li>
+          <li><span class="font-semibold">Gaji & Job Security Tinggi:</span> Profesi IT dikenal stabil dan bernilai
+            tinggi.
+          </li>
+          <li><span class="font-semibold">Bisa Berkarya Sendiri:</span> Buat aplikasi, website, atau startup sendiri!
+          </li>
+          <li><span class="font-semibold">Banyak Sumber Belajar Gratis:</span> Mulai dari YouTube, Coursera, hingga
+            bootcamp
+            online.</li>
+          <li><span class="font-semibold">Selalu Ada Hal Baru:</span> IT terus berkembang, selalu ada hal baru untuk
+            dipelajari.</li>
+        </ul>
+      </div>
+
+      <div class="text-lg space-y-4 text-gray-700 dark:text-gray-300">
+        <h2 class="text-xl font-semibold text-blue-600 dark:text-blue-400">Profesi Keren di Dunia IT</h2>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <li><span class="font-semibold">👨‍💻 Software Developer:</span> Membangun aplikasi dan website.</li>
+          <li><span class="font-semibold">📊 Data Analyst:</span> Menganalisis data untuk pengambilan keputusan.</li>
+          <li><span class="font-semibold">🛡️ Cybersecurity Specialist:</span> Melindungi sistem dari serangan hacker.
+          </li>
+          <li><span class="font-semibold">🌐 Network Administrator:</span> Mengelola jaringan komputer.</li>
+          <li><span class="font-semibold">📂 IT Project Manager:</span> Mengatur proyek teknologi.</li>
+        </ul>
+      </div>
+
+      <div class="text-lg space-y-4 text-gray-700 dark:text-gray-300">
+        <h2 class="text-xl font-semibold text-blue-600 dark:text-blue-400">Gimana Cara Mulai Karier di IT?</h2>
+        <ul class="list-none pl-6 space-y-2">
+          <li>✅ <span class="font-semibold">Pelajari Dasarnya:</span> Mulai dari coding, database, dan jaringan.</li>
+          <li>✅ <span class="font-semibold">Bangun Portofolio:</span> Buat proyek nyata seperti website atau aplikasi
+            kecil.
+          </li>
+          <li>✅ <span class="font-semibold">Gabung Komunitas:</span> Ikut forum seperti Stack Overflow atau Discord
+            komunitas tech.</li>
+          <li>✅ <span class="font-semibold">Cari Magang atau Freelance:</span> Latih skill dan dapatkan pengalaman
+            nyata.
+          </li>
+        </ul>
+      </div>
+
+      <div class="text-lg space-y-4 text-gray-700 dark:text-gray-300">
+        <h2 class="text-xl font-semibold text-blue-600 dark:text-blue-400">Kesimpulan</h2>
+        <p>IT bukan hanya tentang komputer, tapi juga bagaimana teknologi membantu kehidupan kita. Dengan skill IT, kamu
+          bisa membuka banyak peluang kerja dan meraih masa depan yang lebih cerah!</p>
+      </div>
+    </section>
+
+  </main>
+  <footer class="grid grid-cols-12 text-orange-100 text-md sm:text-xl font-lighter p-5 sm:p-10">
+    <div class="flex gap-x-3">
+      <a class="hover:underline" target="_blank" href="https://instagram.com/joanorlandopurba">Instagram</a>
+      <p>|</p>
+      <a class="hover:underline" target="_blank" href="https://linkedin.com/in/joanpurba">LinkedIn</a>
+    </div>
+  </footer>
+  <a target="_blank" href="https://api.whatsapp.com/send/?phone=6282275338090&text&type=phone_number&app_absent=0"
+    class="fixed bottom-10 right-10 bg-amber-400 rounded-full shadow-lg p-5">
+    <img class="w-5 h-5 md:w-7 md:h-7" src="images/icons/phone2.svg" alt="">
+  </a>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+  $(window).ready(function () {
+    $(window).on("scroll", function () {
+      if ($(window).scrollTop() > 50) {
+        $(".largeSizeHeader").addClass("scrollActive");
+        $(".largeSizeHeader").addClass("shadow");
+      } else {
+        $(".largeSizeHeader").removeClass("scrollActive");
+        $(".largeSizeHeader").removeClass("shadow");
+      }
+    });
+    $(".humburger").on("click", function () {
+      $("body").toggleClass("humburgerActive")
+    })
+  });
+</script>
+
+</html>
