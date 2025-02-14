@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ketjeh Developer</title>
+  <title>Rantai Cerdas</title>
   <link rel="icon" href="images/logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="dist/hamburgers.css" rel="stylesheet">
@@ -83,7 +83,7 @@
 
 <body class="bg-black text-orange-100">
   <header class="fixed z-10 w-full hidden md:flex justify-between items-center text-orange-50 p-10 backdrop-blur-2xl">
-    <a class="sm:text-xl xl:text-3xl font-semibold" href="dashboard.html">Ketjeh Developer</a>
+    <a class="sm:text-xl xl:text-3xl font-semibold" href="dashboard.html">Rantai Cerdas</a>
     <div class="hamburger">
       <div class="hamburger-box">
         <div class="hamburger-inner"></div>
@@ -107,7 +107,7 @@
   </header>
   <header class="fixed z-10 w-full md:hidden block text-orange-50 p-5 sm:p-10 bg-zinc-900">
     <section class="w-full flex justify-between items-center">
-      <a class="text-md sm:text-xl xl:text-3xl font-semibold" href="dashboard.html">Ketjeh Developer</a>
+      <a class="text-md sm:text-xl xl:text-3xl font-semibold" href="dashboard.html">Rantai Cerdas</a>
       <div class="humburger p-0 d-flex justify-content-center align-items-center">
         <div class="line rounded-5"></div>
       </div>
@@ -166,31 +166,19 @@
     <hr class="my-10 border-zinc-700">
     <section class="px-0 2xl:px-20">
       <h1 class="text-md sm:text-xl xl:text-2xl font-semibold">📑 Riwayat Quiz</h1>
-      <div class="mt-5 w-full flex items-center bg-orange-100 text-black font-semibold gap-x-5 rounded-md p-3 md:p-6">
-        <img class="w-7 h-7 sm:w-10 sm:h-10 w-xl:w-14 w-xl:h-14" src="images/icons/file-text.svg" alt="">
-        <div class="w-full flex justify-between items-center">
-          <div class="space-y-1">
-            <p class="text-xs sm:text-md xl:text-xl font-bold">Quiz | Teori : Pengenalan IT</p>
-            <p class="text-xs sm:text-md">Skor : 100</p>
-          </div>
-          <img class="w-5 md:w-8 h-5 md:h-8" src="images/icons/check.svg" alt="">
-        </div>
-      </div>
+      <div id="quiz-container"></div>
     </section>
     <hr class="my-10 border-zinc-700">
     <section class="px-0 2xl:px-20">
       <h1 class="text-md sm:text-xl xl:text-2xl font-semibold">📦 Paket belajar</h1>
       <div class="mt-5 w-full grid grid-cols-12 gap-3">
         <div class="col-span-12 md:col-span-4 xl:col-span-3 flex flex-col bg-zinc-800 rounded-xl p-5 sm:p-7">
-          <h3 class="text-sm sm:text-2xl font-semibold">Fondasi Web Development</h3>
-          <p class="mt-2 text-xs sm:text-lg font-normal flex-grow">Pelajari HTML, CSS, Tailwind, dan SEO untuk website
-            responsif
-            dan terstruktur.</p>
+          <h3 class="text-sm sm:text-2xl font-semibold">Pengenalan Blockchain & Web3</h3>
+          <p class="mt-2 text-xs sm:text-lg font-normal flex-grow">Belajar konsep blockchain, desentralisasi, dan ekosistem Web3.</p>
           <div class="mt-20 flex gap-3 flex-wrap text-xs sm:text-base">
-            <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">HTML</p>
-            <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">CSS</p>
-            <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">Tailwind CSS</p>
-            <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">SEO Dasar</p>
+            <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">Solidity</p>
+            <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">Remix IDE</p>
+            <p class="bg-zinc-700 hover:bg-amber-500 py-2 px-3 rounded-md">MetaMask</p>
           </div>
           <a href="detailPaket.html"
             class="mt-5 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-sm sm:text-lg font-bold text-zinc-800 text-center py-2 rounded-md">
@@ -202,7 +190,7 @@
   </main>
   <footer class="grid grid-cols-12 text-orange-100 text-md sm:text-xl font-lighter p-5 sm:p-10">
     <div class="flex gap-x-3">
-      <a class="hover:underline" target="_blank" href="https://instagram.com/joanorlandopurba">Instagram</a>
+      <a class="hover:underline" target="_blank" href="https://instagram.com/joanpurbaa">Instagram</a>
       <p>|</p>
       <a class="hover:underline" target="_blank" href="https://linkedin.com/in/joanpurba">LinkedIn</a>
     </div>
@@ -217,16 +205,16 @@
   const daysContainer = document.getElementById("days-container");
 
   const eventsData = [
-    { date: "2024-02-05", title: "Pengenalan IT", time: "1 PM - 4 PM", color: "bg-red-500", startRow: 1, endRow: 7 },
+    { date: "2024-02-05", title: "Pengenalan Web3 & Blockchain", time: "1 PM - 4 PM", color: "bg-red-500", startRow: 1, endRow: 7 },
     { date: "2024-02-05", title: "Quiz | Teori", time: "5 PM - 5:30 PM", color: "bg-red-500", startRow: 8, endRow: 9 },
-    { date: "2024-02-06", title: "Pengenalan Website", time: "1 PM - 4 PM", color: "bg-red-500", startRow: 1, endRow: 7 },
-    { date: "2024-02-06", title: "Quiz | Teori", time: "5 PM - 5:30 PM", color: "bg-red-500", startRow: 8, endRow: 9 },
-    { date: "2024-02-07", title: "Tag HTML", time: "1 PM - 4 PM", color: "bg-red-500", startRow: 1, endRow: 7 },
-    { date: "2024-02-07", title: "Quiz | Praktek", time: "5 PM - 6 PM", color: "bg-red-500", startRow: 8, endRow: 10 },
-    { date: "2024-02-08", title: "HTML: Table, Form", time: "1 PM - 4 PM", color: "bg-amber-500", startRow: 1, endRow: 7 },
-    { date: "2024-02-08", title: "Quiz | Praktek", time: "5 PM - 6 PM", color: "bg-amber-500", startRow: 8, endRow: 10 },
-    { date: "2024-02-09", title: "Pengenalan CSS", time: "1 PM - 4 PM", color: "bg-blue-500", startRow: 1, endRow: 7 },
-    { date: "2024-02-09", title: "Quiz | Teori", time: "5 PM - 5:30 PM", color: "bg-blue-500", startRow: 8, endRow: 9 },
+    { date: "2024-02-06", title: "Ethereum dan Smart Contracts", time: "1 PM - 4 PM", color: "bg-red-500", startRow: 1, endRow: 7 },
+    { date: "2024-02-06", title: "Quiz | Teori", time: "5 PM - 6 PM", color: "bg-red-500", startRow: 8, endRow: 10 },
+    { date: "2024-02-07", title: "Wallets dan Pengelolaan Keuangan", time: "1 PM - 4 PM", color: "bg-red-500", startRow: 1, endRow: 7 },
+    { date: "2024-02-07", title: "Quiz | Teori", time: "5 PM - 5:30 PM", color: "bg-red-500", startRow: 8, endRow: 9 },
+    { date: "2024-02-08", title: "Mata Uang Kripto", time: "1 PM - 4 PM", color: "bg-amber-500", startRow: 1, endRow: 7 },
+    { date: "2024-02-08", title: "Quiz | Praktik", time: "5 PM - 6 PM", color: "bg-amber-500", startRow: 8, endRow: 10 },
+    { date: "2024-02-09", title: "Intro Frameworks Web3", time: "1 PM - 4 PM", color: "bg-blue-500", startRow: 1, endRow: 7 },
+    { date: "2024-02-09", title: "Quiz | Teori", time: "5 PM - 6 PM", color: "bg-blue-500", startRow: 8, endRow: 10 }
   ];
 
   function formatDate(dateString) {
@@ -292,6 +280,39 @@
       $("body").toggleClass("humburgerActive")
     })
   });
+
+  const quizData = [
+    { title: "Pengenalan Web3 & Blockchain", score: 100 },
+    { title: "Ethereum dan Smart Contracts", score: 100 },
+    { title: "Wallets dan Pengelolaan Keuangan", score: 100 }
+  ];
+
+  function renderQuiz() {
+    const quizContainer = document.getElementById("quiz-container");
+    quizContainer.innerHTML = "";
+
+    quizData.forEach(quiz => {
+      const quizElement = document.createElement("a");
+      quizElement.classList.add("mt-5", "w-full", "flex", "items-center", "bg-orange-100", "text-black", "font-semibold", "gap-x-5", "rounded-md", "p-3", "md:p-6");
+      quizElement.href = "https://docs.google.com/forms/d/e/1FAIpQLSf4rGi2jx8JkQLkx9Rf8-thZWjg6dMdwp7hyet3bdYWATG85A/viewform?usp=dialog";
+      quizElement.target = "_blank";
+
+      quizElement.innerHTML = `
+        <img class="w-7 h-7 sm:w-10 sm:h-10 w-xl:w-14 w-xl:h-14" src="images/icons/file-text.svg" alt="">
+        <div class="w-full flex justify-between items-center">
+          <div class="space-y-1">
+            <p class="text-xs sm:text-md xl:text-xl font-bold">Quiz | Teori : ${quiz.title}</p>
+            <p class="text-xs sm:text-base">Skor : ${quiz.score}</p>
+          </div>
+          <img class="w-5 md:w-8 h-5 md:h-8" src="images/icons/check.svg" alt="">
+        </div>
+      `;
+
+      quizContainer.appendChild(quizElement);
+    });
+  }
+
+  renderQuiz();
 </script>
 
 </html>
