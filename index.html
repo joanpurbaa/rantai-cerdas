@@ -23,6 +23,7 @@
   * {
     letter-spacing: 1px;
     scroll-behavior: smooth;
+    box-sizing: border-box;
   }
 
   .text-stroke {
@@ -104,6 +105,73 @@
 
   body.humburgerActive header nav {
     display: block !important;
+  }
+
+  .wrapper {
+    margin-top: 2rem;
+    width: 90%;
+    max-width: 1536px;
+    margin-inline: auto;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 1) 20%,
+        rgba(0, 0, 0, 1) 80%,
+        rgba(0, 0, 0, 0));
+  }
+
+  @keyframes scrollLeft {
+    to {
+      left: -200px;
+    }
+  }
+
+  @keyframes scrollRight {
+    to {
+      right: -200px;
+    }
+  }
+
+  .itemLeft,
+  .itemRight {
+    width: 200px;
+    border-radius: 6px;
+    position: absolute;
+    animation-timing-function: linear;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+  }
+
+  .itemLeft {
+    left: max(calc(300px * 8), 100%);
+    animation-name: scrollLeft;
+  }
+
+  .itemRight {
+    right: max(calc(300px * 8), calc(100% + 200px));
+    animation-name: scrollRight;
+  }
+
+  .item1 {
+    animation-delay: calc(30s / 8 * (8 - 1) * -1);
+  }
+
+  .item2 {
+    animation-delay: calc(30s / 8 * (8 - 2) * -1);
+  }
+
+  .item3 {
+    animation-delay: calc(30s / 8 * (8 - 3) * -1);
+  }
+
+  .item4 {
+    animation-delay: calc(30s / 8 * (8 - 4) * -1);
+  }
+
+  .item5 {
+    animation-delay: calc(30s / 8 * (8 - 5) * -1);
   }
 </style>
 
@@ -195,6 +263,46 @@
           class="font-bold">4
           bulan</span>,
         kamu bakal jadi developer kece yang siap bikin project keren. <br> Are you ready to glow up?</p>
+    </section>
+    <section class="py-32">
+      <h1 class="text-3xl md:text-5xl lg:text-7xl font-black text-black text-stroke italic text-center">Partner kami
+      </h1>
+      <div class="mt-32">
+        <div class="wrapper flex items-center space-x-10">
+          <div class="itemLeft item1">
+            <img src="images/coinbase.svg" alt="">
+          </div>
+          <div class="itemLeft item2">
+            <img src="images/bitcoin.svg" alt="">
+          </div>
+          <div class="itemLeft item3">
+            <img src="images/solidity.svg" alt="">
+          </div>
+          <div class="itemLeft item4">
+            <img src="images/ternakuang.svg" alt="">
+          </div>
+          <div class="itemLeft item5 w-96 h-96">
+            <img class="w-96 h-96" src="images/bhi.svg" alt="">
+          </div>
+        </div>
+        <div class="wrapper flex items-center space-x-10">
+          <div class="itemRight item1">
+            <img src="images/solidity.svg" alt="">
+          </div>
+          <div class="itemRight item2">
+            <img src="images/ternakuang.svg" alt="">
+          </div>
+          <div class="itemRight item3">
+            <img src="images/bitcoin.svg" alt="">
+          </div>
+          <div class="itemRight item4">
+            <img src="images/coinbase.svg" alt="">
+          </div>
+          <div class="itemRight item5 w-96 h-96">
+            <img class="w-96 h-96" src="images/bhi.svg" alt="">
+          </div>
+        </div>
+      </div>
     </section>
     <section id="materi" class="block grid grid-cols-12 py-32 px-5 sm:px-10 2xl:px-0">
       <div
